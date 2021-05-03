@@ -10,7 +10,6 @@ hesin.txt
 *.bim
 *.bed
 xuyi/ibd/
-*.sh
 *.sh.e*
 *.sh.o*
 *cores.e*

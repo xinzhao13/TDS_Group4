@@ -36,20 +36,27 @@ Below are the list of packages and the version numbers required to reproduce the
 ### HPC folder structure 🗄️
 ```bash
 .
-├── andrea
+├── 1_SNP_List_Creation.R
+├── 2_Genetic_Data_Creation.R
+├── 3_Outcome_Covariate_Data_Creation.R
+├── 4_Final_Data_Creation.R
+├── 5_Analysis_and_Visualisation.R
+├── 5plus_Analysis_and_Visualisation.R
+├── 6.1_Sensitivity_Analysis.R
+├── 6.2_Sensitivity_Analysis.R
+├── analysis
 ├── data
-├── disease_outcomes.rds
-├── marie
-├── nasirdin
-├── plink.log
-├── README.md
-├── script
-├── UKB_genetic_data_scripts
-├── ukb_geno.fam
-├── ukb_imp.fam
-├── Untitled.ipynb
-├── xin
-└── xuyi
+├── Job_Submission_DataCreation.sh
+├── Job_Submission_Step1Only.sh
+├── Job_Submission_Step2Only.sh
+├── Job_Submission_Step3Only.sh
+├── Job_Submission_Step4Only.sh
+├── Job_Submission_Step5Only.sh
+├── Job_Submission_Step5plusOnly.sh
+├── Job_Submission_Step6Only.sh
+├── Job_Submission_Step6plusOnly.sh
+├── original
+└── README.md
 ```
 ### Key files 📂
 
