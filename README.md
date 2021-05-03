@@ -20,6 +20,20 @@ Below are the list of packages and the version numbers required to reproduce the
   ```sh
   npm install npm@latest -g
   ```
+### Key files 📂
+
+The following files identifies UKB participants by eid:
+* ukb26390.csv: main UKB data 
+* ukb27725.csv: HES data
+* GWAS_PCs.rds: First 10 PCs of the UKB genotype data
+* hesin_diag.txt: HES medical diagnosis
+* w19266_20200204.csv: List of withdrawn participants
+
+The following files come from IBDGC:
+* EUR.CD.gwas_info03_filtered.assoc: European IBD 1000 Genome imputed GWAS summarised data
+* EUR.IBD.gwas_info03_filtered.assoc: European CD 1000 Genome imputed GWAS summarised data
+* EUR.UC.gwas_info03_filtered.assoc: European UC 1000 Genome imputed GWAS summarised data
+
 
 ### Installation 🖱️
 
@@ -28,7 +42,9 @@ Below are the list of packages and the version numbers required to reproduce the
    git clone https://github.com/xinzhao13/HDA_TDS.git
    ```
 2. Install dependencies listed above 👆.
-3. Run the pipeline.
+3. Locate the UKB and HES data.
+4. Download the summarised data from IBD Genetics Consortium [here](https://www.ibdgenetics.org/downloads.html)
+5. Run the pipeline.
     ```sh
     ````
 
@@ -58,7 +74,6 @@ Below are the list of packages and the version numbers required to reproduce the
 ├── original
 └── README.md
 ```
-### Key files 📂
 
 ## Relevant resources 🏖️
 
