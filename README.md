@@ -23,16 +23,20 @@ Below are the list of packages and the version numbers required to reproduce the
 ### Key files 📂
 
 The following files identifies UKB participants by eid:
-* **ukb26390.csv**: main UKB data 
-* **ukb27725.csv**: HES data
-* **GWAS_PCs.rds**: First 10 PCs of the UKB genotype data
-* **hesin_diag.txt**: HES medical diagnosis
-* **w19266_20200204.csv**: List of withdrawn participants
+| File name           | Description                           |
+|---------------------|---------------------------------------|
+| ukb26390.csv        | Main UKB data                         |
+| ukb27725.csv        | HES data                              |
+| GWAS_PCs.rds        | First 10 PCs of the UKB genotype data |
+| hesin_diag.txt      | HES medical diagnosis                 |
+| w19266_20200204.csv | List of withdrawn participants        |
 
 The following files come from IBDGC:
-* **UR.CD.gwas_info03_filtered.assoc**: European IBD 1000 Genome imputed GWAS summarised data
-* **EUR.IBD.gwas_info03_filtered.assoc**: European CD 1000 Genome imputed GWAS summarised data
-* **EUR.UC.gwas_info03_filtered.assoc**: European UC 1000 Genome imputed GWAS summarised data
+| File name                          | Description                                           |
+|------------------------------------|-------------------------------------------------------|
+| UR.CD.gwas_info03_filtered.assoc   | European IBD 1000 Genome imputed GWAS summarised data |
+| EUR.IBD.gwas_info03_filtered.assoc | European CD 1000 Genome imputed GWAS summarised data  |
+| EUR.UC.gwas_info03_filtered.assoc  | European UC 1000 Genome imputed GWAS summarised data  |
 
 
 ### Key scripts 📜
