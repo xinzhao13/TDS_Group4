@@ -5,11 +5,11 @@ This project is prepared for the Translational Data Science module as part of MS
 
 ## Project team 🧑‍🤝‍🧑
 
-* CID1
-* CID2
-* CID3
-* CID4
-* CID5
+* CID1: 01999787
+* CID2: 01912853
+* CID3: 01906946
+* CID4: 01993406
+* CID5: 00600463
 
 ## Getting started ✈️
 
@@ -43,7 +43,7 @@ The following files come from IBDGC:
    ```
 2. Install dependencies listed above 👆.
 3. Locate the UKB and HES data.
-4. Download the summarised data from IBD Genetics Consortium [here](https://www.ibdgenetics.org/downloads.html)
+4. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html)
 5. Run the pipeline.
     ```sh
     ````
@@ -83,3 +83,4 @@ The following files come from IBDGC:
 * [International Inflammatory Bowel Disease Genetics Consortium (IIBDGC)](https://www.ibdgenetics.org/)
 * [MendelianRandomisation: An R Package for Performing Mendelian Randomization Analyses Using Summarized Data](https://cran.r-project.org/web/packages/MendelianRandomization/vignettes/Vignette_MR.pdf)
 * [Getting Started with HPC at Imperial](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/support/getting-started/)
+* [PhenoScannerV2](http://www.phenoscanner.medschl.cam.ac.uk/)
