@@ -1,14 +1,7 @@
-*.csv
 data/
 *.rds
 *.xlsx
-*.fam
-hesin_diag.txt
-hesin.txt
-*.fam
-*.bim
-*.bed
-xuyi/ibd/
+*.csv
 *.sh.e*
 *.sh.o*
 *cores.e*
@@ -19,7 +12,3 @@ xuyi/ibd/
 *.fam
 *.bim
 *.bed
-*.txt
-xin/gwas_learn/v1/
-xin/gwas_learn/v2/
-*.png
