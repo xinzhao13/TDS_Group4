@@ -11,9 +11,10 @@ For the detailed description of the data sources, data processing and analysis p
 * CID2: 01912853
 * CID3: 01906946
 * CID4: 01993406
-* CID5: 00600463
+* CID5: 00600463 
 
-\
+&nbsp;
+
 
 ## Key files 📂
 
@@ -33,7 +34,8 @@ The following files come from IIBDGC:
 | EUR.IBD.gwas_info03_filtered.assoc | European CD 1000 Genome imputed GWAS summarised data  |
 | EUR.UC.gwas_info03_filtered.assoc  | European UC 1000 Genome imputed GWAS summarised data  |
 
-\
+&nbsp;
+
 
 ## Key scripts 📜
 
@@ -50,7 +52,8 @@ The following R scripts should be run sequentially by the respective .sh scripts
 | 6.2_Sensitivity_Analysis.R          |                          |
 
 
-\
+&nbsp;
+
 
 ## Getting started ✈️
 
@@ -101,7 +104,9 @@ Below are the list of packages and the version numbers required to reproduce the
 ├── original
 └── README.md
 ```
-\
+
+&nbsp;
+
 
 ## Relevant resources 🏖️
 
