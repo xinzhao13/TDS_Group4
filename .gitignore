@@ -1,7 +1,6 @@
 *.csv
 data/
 *.rds
-*.txt
 *.xlsx
 *.fam
 hesin_diag.txt
