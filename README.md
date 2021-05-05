@@ -13,16 +13,8 @@ For the detailed description of the data sources, data processing and analysis p
 * CID4: 01993406
 * CID5: 00600463
 
-## Getting started ✈️
 
-### Prerequisites 💻
-
-Below are the list of packages and the version numbers required to reproduce the project.
-
-  ```sh
-  npm install npm@latest -g
-  ```
-### Key files 📂
+## Key files 📂
 
 The following files identifies UKB participants by eid:
 | File name           | Description                           |
@@ -41,7 +33,7 @@ The following files come from IIBDGC:
 | EUR.UC.gwas_info03_filtered.assoc  | European UC 1000 Genome imputed GWAS summarised data  |
 
 
-### Key scripts 📜
+## Key scripts 📜
 
 The following R scripts should be run sequentially by the respective .sh scripts:
 | R script                            | Corresponding .sh Script |
@@ -54,6 +46,19 @@ The following R scripts should be run sequentially by the respective .sh scripts
 | 5plus_Analysis_and_Visualisation.R  |                          |
 | 6.1_Sensitivity_Analysis.R          |                          |
 | 6.2_Sensitivity_Analysis.R          |                          |
+
+
+
+
+## Getting started ✈️
+
+### Prerequisites 💻
+
+Below are the list of packages and the version numbers required to reproduce the project.
+
+  ```sh
+  npm install npm@latest -g
+  ```
 
 ### Installation 🖱️
 
