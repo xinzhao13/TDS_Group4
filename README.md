@@ -23,17 +23,31 @@ Below are the list of packages and the version numbers required to reproduce the
 ### Key files 📂
 
 The following files identifies UKB participants by eid:
-* ukb26390.csv: main UKB data 
-* ukb27725.csv: HES data
-* GWAS_PCs.rds: First 10 PCs of the UKB genotype data
-* hesin_diag.txt: HES medical diagnosis
-* w19266_20200204.csv: List of withdrawn participants
+* **ukb26390.csv**: main UKB data 
+* **ukb27725.csv**: HES data
+* **GWAS_PCs.rds**: First 10 PCs of the UKB genotype data
+* **hesin_diag.txt**: HES medical diagnosis
+* **w19266_20200204.csv**: List of withdrawn participants
 
 The following files come from IBDGC:
-* EUR.CD.gwas_info03_filtered.assoc: European IBD 1000 Genome imputed GWAS summarised data
-* EUR.IBD.gwas_info03_filtered.assoc: European CD 1000 Genome imputed GWAS summarised data
-* EUR.UC.gwas_info03_filtered.assoc: European UC 1000 Genome imputed GWAS summarised data
+* **UR.CD.gwas_info03_filtered.assoc**: European IBD 1000 Genome imputed GWAS summarised data
+* **EUR.IBD.gwas_info03_filtered.assoc**: European CD 1000 Genome imputed GWAS summarised data
+* **EUR.UC.gwas_info03_filtered.assoc**: European UC 1000 Genome imputed GWAS summarised data
 
+
+### Key scripts 📜
+
+The following R scripts should be run sequentially by the respective .sh scripts:
+| R script                            | Corresponding .sh Script |
+|-------------------------------------|--------------------------|
+| 1_SNP_List_Creation.R               |                          |
+| 2_Genetic_Data_Creation.R           |                          |
+| 3_Outcome_Covariate_Data_Creation.R |                          |
+| 4_Final_Data_Creation.R             |                          |
+| 5_Analysis_and_Visualisation.R      |                          |
+| 5plus_Analysis_and_Visualisation.R  |                          |
+| 6.1_Sensitivity_Analysis.R          |                          |
+| 6.2_Sensitivity_Analysis.R          |                          |
 
 ### Installation 🖱️
 
