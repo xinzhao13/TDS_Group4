@@ -159,8 +159,9 @@ X_snps<-X$id
 # Pheno scanner -----------------------------------------------------
 print("Starting phenoscanner section")
 # Export phenoscanner output to file
-for (i in (1:length(X_snps))){
+for (i in (1:length(X_snps))){  # XZ updated 05/05/2021
   
+  snp<-X_snps[i] # XZ updated 05/05/2021
   snp_data<-phenoscanner(snp)
   write.table(snp_data,"1-2-phenoscanner_output.csv",
               append=TRUE,sep="/")
