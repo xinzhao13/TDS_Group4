@@ -131,7 +131,7 @@ tidyverse	        1.3.0
 utils	                3.6.1
 VennDiagram	        1.6.20
   ```
-Many of the above can be installed using the yaml file provided, the following requires separate installation.
+Many of the above can be installed using the yaml file provided. However, the following requires separate installation.
   ```sh
 Packages	        Version
 bit64	                4.0.5
@@ -160,17 +160,12 @@ Clone the repo.
 ### Preparation and running the pipeline 🏃‍♀️️
 
 1. Install R libraries listed above 👆 in your Conda R on the HPC.
-  
     * It is recommended to submit the bash scripts to the HPC, and not to overload RStudio Server. 
     * To navigate to Conda R, run the following code:
    ```sh
    module load anaconda3/personal
    R
    ``` 
-    * Please first install the .yml file, and install any remaining R libraries not in the file separately.
-   ```sh
-   conda env update --file magic.yml
-   ```    
    
 2. Create "data" folder under the directory.
 3. Locate the UKB and HES data and save in the data folder.
