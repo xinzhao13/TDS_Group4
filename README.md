@@ -7,7 +7,7 @@ We adopted the Polygenic Risk Scores (PRS) as instrumental variables to infer th
 
 We used the European cohort of Inflammatory Bowel Disease Genetics Consortium (IIBDGC) to select the IBD-associated SNPs and to generate the weights of those SNPS, the causal inference between IBD and colon cancer was performed in the UKB cohort. We used the UKB genotype data, cancer diagnosis, lifestyle factors, medication, dietary habits, biomarkers. Hospital Episode Statistics (HES) was linked to the UKB data by the unique eid identifier of participants, from which we used the non-cancer disease outcomes.
 
-In addition to the observational analysis and the main MR analysis, we have studied potential confounding variables using LASSO, sPLS and Random Forest models, used the selected/important covariates to attenuate the observational associations between IBD and colon cancer. We have queried the selected SNPs and checked for potential confounders using PhenoScanner, performed logistic regressions between the individual IBD-associated SNPs and colon cancer, followed by a set of sensitivity analyses (WM, IVW and MR-Egger etc) to assess the assumptions of the MR analysis.
+In addition to the observational analysis and the main MR analysis, we have studied potential confounding variables using LASSO, sPLS and Random Forest models, used the selected/important covariates to attenuate the observational associations between IBD and colon cancer. We have queried the selected SNPS and checked for potential confounders using PhenoScanner, performed logistic regressions between the individual IBD-associated SNPs and colon cancer, followed by a set of sensitivity analyses (WM, IVW and MR-Egger etc) to assess the assumptions of the MR analysis.
 
 For the detailed description of the data sources, data processing and analysis, please see the full report.
 
@@ -67,58 +67,68 @@ The following R scripts will be run sequentially by the respective bash scripts:
 
 The following bash scripts calls the R scripts above:
 
-| Bash script                     | Description |
-|---------------------------------|-------------|
-| 
-| Job_Submission_Step3Only.sh     |             |
-| Job_Submission_Step4Only.sh     |             |
-| Job_Submission_Step5Only.sh     |             |
-| Job_Submission_Step5plusOnly.sh |             |
-| Job_Submission_Step6Only.sh     |             |
-
+| Bash script                            | Description                                                                                                                                 |
+|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| Job_Submission_DataCreation.sh         | Runs 1_SNP_List_Creation.R, 2_Genetic_Data_Creation.R, 3_Outcome_Covariate_Data_Creation.R and 4_Final_Data_Creation.R in sequential order. |
+| Job_Submission_Visualisation1.sh       | Runs 5_Analysis_and_Visualisation.R.                                                                                                        |
+| Job_Submission_Visualisation2.sh       | Runs 5plus_Analysis_and_Visualisation.R.                                                                                                    |
+| Job_Submission_SensitivityAnalysis1.sh | Runs 6.1_Sensitivity_Analysis.R.                                                                                                            |
+| Job_Submission_SensitivityAnalysis2.sh | Runs the multivariable logistic regressions at SNP level against colon cancer.                                                              |
+| Job_Submission_SensitivityAnalysis3.sh | Runs 6.2_Sensitivity_Analysis.R.                                                                                                            |
 
 &nbsp;
 
+
 ## Getting started ✈️
+
+### HPC folder structure 🗄️
+
+The folder structure of the project directory should look like this.
+```bash
+.
+├── analysis    # outputs and plots
+├── data        # data folder 
+└── original    # the original demonstrative scripts
+```
 
 ### Prerequisites 💻
 
 Below are the list of packages and the version numbers required to reproduce the project.
 
   ```sh
-  Packages	              Version
-  bit64	                  4.0.5
-  car	                    3.0-2
-  data.table	            1.12.2
-  dplyr	                  1.0.5
-  genio	                  1.0.12
-  ggplot2	                3.3.3
-  gridExtra	              2.3
-  gsubfn	                0.7
-  gt	                    0.2.2
-  gtsummary	              1.4.0
-  Hmisc	                  4.2-0
-  ieugwasr	              0.1.5
-  imputeMissings	        0.0.3
-  matchmaker	            0.1.1
-  MendelianRandomization	0.5.1
-  oem	                    2.0.9
-  openxlsx	              4.1.0
-  parallel	              3.6.1
-  patchwork	              1.1.1
-  pheatmap	              1.0.12
-  plotROC	                2.2.1
-  randomForest	          4.6-14
-  RColorBrewer	          1.1-2
-  rcompanion	            2.4.0
-  regclass	              1.6
-  ROSE	                  0.0-3
-  sgPLS	                  1.7
-  snpStats	              1.36.0
-  tictoc	                1
-  tidyverse	              1.3.0
-  utils	                  3.6.1
-  VennDiagram	            1.6.20
+Packages	        Version
+bit64	                4.0.5
+car	                3.0-2
+data.table	        1.12.2
+dplyr	                1.0.5
+genio	                1.0.12
+ggplot2	                3.3.3
+gridExtra	        2.3
+gsubfn	                0.7
+gt	                0.2.2
+gtsummary	        1.4.0
+Hmisc	                4.2-0
+ieugwasr	        0.1.5
+imputeMissings	        0.0.3
+matchmaker	        0.1.1
+MendelianRandomization	0.5.1
+oem	                2.0.9
+openxlsx	        4.1.0
+parallel	        3.6.1
+patchwork	        1.1.1
+pheatmap	        1.0.12
+plotROC	                2.2.1
+randomForest	        4.6-14
+RColorBrewer	        1.1-2
+rcompanion	        2.4.0
+regclass	        1.6
+ROSE	                0.0-3
+sgPLS	                1.7
+snpStats	        1.36.0
+tictoc	                1
+tidyverse	        1.3.0
+utils	                3.6.1
+VennDiagram	        1.6.20
 
   ```
 
@@ -129,25 +139,26 @@ Below are the list of packages and the version numbers required to reproduce the
    git clone https://github.com/xinzhao13/TDS_Group4.git
    cd TDS_Group4
    ```
-2. Install dependencies listed above 👆.
-3. Create "data" folder under the directory.
-4. Locate the UKB and HES data and save in the data folder.
-5. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
-6. Change
-7. Run the pipeline in the following order.
+2. Install R libraries listed above 👆 in your Conda R on the HPC. 
+    * It is recommended to submit the bash scripts to the HPC, and not to overloead RStudio Server. 
+    * To navigate to Conda R, run the following code:
+   ```sh
+   module load anaconda3/personal
+   R
+   ``` 
+4. Create "data" folder under the directory.
+5. Locate the UKB and HES data and save in the data folder.
+6. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
+7. Change the path defined in all bash files from `path=/rds/general/project/hda_students_data/live/Group4/General/full_scripts` to your project directory.
+8. Run the pipeline in the following order to reproduce the project.
     ```sh
     qsub Job_Submission_DataCreation.sh
+    qsub Job_Submission_Visualisation1.sh
+    qsub Job_Submission_Visualisation2.sh
+    qsub Job_Submission_SensitivityAnalysis1.sh
+    qsub Job_Submission_SensitivityAnalysis2.sh
+    qsub Job_Submission_SensitivityAnalysis3.sh
     ````
-
-
-### HPC folder structure 🗄️
-```bash
-.
-├── analysis    # outputs and plots
-├── data        # data folder 
-└── original    # the original demonstrative scripts
-
-```
 
 &nbsp;
 
