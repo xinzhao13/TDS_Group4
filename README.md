@@ -65,7 +65,7 @@ The following R scripts will be run sequentially by the respective bash scripts:
 
 &nbsp;
 
-The following bash scripts calls the R scripts above:
+The following bash scripts call the R scripts above:
 
 | Bash script                            | Description                                                                                                                                 |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
@@ -140,7 +140,7 @@ Clone the repo.
    cd TDS_Group4
    ```
 
-### Preparation and running the pipeline 🖱️
+### Preparation and running the pipeline 🏃‍♀️️
 
 1. Install R libraries listed above 👆 in your Conda R on the HPC. 
     * It is recommended to submit the bash scripts to the HPC, and not to overload RStudio Server. 
