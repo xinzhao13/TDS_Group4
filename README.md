@@ -87,7 +87,7 @@ The folder structure of the project directory should look like this.
 ```bash
 .
 ├── analysis    # outputs and plots
-├── data        # data folder 
+├── data        # data folder that should be created explicitly by users
 └── original    # the original demonstrative scripts
 ```
 
@@ -143,7 +143,7 @@ Clone the repo.
 ### Preparation and running the pipeline 🖱️
 
 1. Install R libraries listed above 👆 in your Conda R on the HPC. 
-    * It is recommended to submit the bash scripts to the HPC, and not to overloead RStudio Server. 
+    * It is recommended to submit the bash scripts to the HPC, and not to overload RStudio Server. 
     * To navigate to Conda R, run the following code:
    ```sh
    module load anaconda3/personal
