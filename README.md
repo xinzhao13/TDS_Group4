@@ -79,7 +79,20 @@ The following bash scripts calls the R scripts above:
 
 &nbsp;
 
+
 ## Getting started ✈️
+
+### HPC folder structure 🗄️
+
+The folder structure of the project directory should look like this.
+```bash
+.
+├── analysis    # outputs and plots
+├── data        # data folder 
+└── original    # the original demonstrative scripts
+```
+
+&nbsp;
 
 ### Prerequisites 💻
 
@@ -131,7 +144,7 @@ VennDiagram	        1.6.20
    ```
 2. Install R libraries listed above 👆 in your Conda R on the HPC. 
     * It is recommended to submit the bash scripts to the HPC, and not to overloead RStudio Server. 
-    * To navigate to Conda, run the following code:
+    * To navigate to Conda R, run the following code:
    ```sh
    module load anaconda3/personal
    R
@@ -140,20 +153,15 @@ VennDiagram	        1.6.20
 5. Locate the UKB and HES data and save in the data folder.
 6. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
 7. Change
-8. Run the pipeline in the following order.
+8. Run the pipeline in the following order to reproduce the project.
     ```sh
     qsub Job_Submission_DataCreation.sh
+    qsub Job_Submission_Visualisation1.sh
+    qsub Job_Submission_Visualisation2.sh
+    qsub Job_Submission_SensitivityAnalysis1.sh
+    qsub Job_Submission_SensitivityAnalysis2.sh
+    qsub Job_Submission_SensitivityAnalysis3.sh
     ````
-
-
-### HPC folder structure 🗄️
-```bash
-.
-├── analysis    # outputs and plots
-├── data        # data folder 
-└── original    # the original demonstrative scripts
-
-```
 
 &nbsp;
 
