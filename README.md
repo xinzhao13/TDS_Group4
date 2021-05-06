@@ -131,6 +131,23 @@ tidyverse	        1.3.0
 utils	                3.6.1
 VennDiagram	        1.6.20
   ```
+Many of the above can be installed using the yaml file provided, the following requires separate installation.
+  ```sh
+Packages	        Version
+bit64	                4.0.5
+genio	                1.0.12
+gsubfn	                0.7
+ieugwasr	        0.1.5
+matchmaker	        0.1.1
+MendelianRandomization	0.5.1
+parallel	        3.6.1
+rcompanion	        2.4.0
+regclass	        1.6
+snpStats	        1.36.0
+tictoc	                1
+utils	                3.6.1
+  ```
+
 
 ### Installation 🖱️
 
@@ -142,13 +159,19 @@ Clone the repo.
 
 ### Preparation and running the pipeline 🏃‍♀️️
 
-1. Install R libraries listed above 👆 in your Conda R on the HPC. 
+1. Install R libraries listed above 👆 in your Conda R on the HPC.
+  
     * It is recommended to submit the bash scripts to the HPC, and not to overload RStudio Server. 
     * To navigate to Conda R, run the following code:
    ```sh
    module load anaconda3/personal
    R
    ``` 
+    * Please first install the .yml file, and install any remaining R libraries not in the file separately.
+   ```sh
+   conda env update --file magic.yml
+   ```    
+   
 2. Create "data" folder under the directory.
 3. Locate the UKB and HES data and save in the data folder.
 4. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
