@@ -110,70 +110,10 @@ Below are the list of packages and the version numbers required to reproduce the
 ### HPC folder structure 🗄️
 ```bash
 .
-├── 1_SNP_List_Creation.R
-├── 2_Genetic_Data_Creation.R
-├── 3_Outcome_Covariate_Data_Creation.R
-├── 4_Final_Data_Creation.R
-├── 5_Analysis_and_Visualisation.R
-├── 5plus_Analysis_and_Visualisation.R
-├── 6.1_Sensitivity_Analysis.R
-├── 6.2_Sensitivity_Analysis.R
 ├── analysis
 ├── data
-├── Job_Submission_DataCreation.sh
-├── Job_Submission_SensitivityAnalysis1.sh
-├── Job_Submission_SensitivityAnalysis2.sh
-├── Job_Submission_SensitivityAnalysis3.sh
-├── Job_Submission_Step5Only.sh
-├── Job_Submission_Step5plusOnly.sh
-├── original
-├── RandomForestTest.R
-├── RandomForestTest.sh
-├── README.md
-└── Ss
+└── original
 
-4 directories, 25 files
-bash-4.2$ tree -L 2
-.
-├── 1_SNP_List_Creation.R
-├── 2_Genetic_Data_Creation.R
-├── 3_Outcome_Covariate_Data_Creation.R
-├── 4_Final_Data_Creation.R
-├── 5_Analysis_and_Visualisation.R
-├── 5plus_Analysis_and_Visualisation.R
-├── 6.1_Sensitivity_Analysis.R
-├── 6.2_Sensitivity_Analysis.R
-├── analysis
-│   ├── 1-2-phenoscanner_output.csv
-│   ├── appendix;\ forest.jpg
-│   ├── appendix;\ scatter.jpg
-│   ├── MR_logistic_regressions_results.txt
-│   ├── MR_plot.jpg
-│   ├── PRSvalidation_logistic_regressions_results.txt
-│   ├── PRS_validation_plot.jpg
-│   ├── results;\ forest+scatter.jpg
-│   └── Vennspls.pdf
-├── data
-├── original
-│   ├── example_extraction
-│   ├── generating_toy_dataset.R
-│   ├── getting_started.R
-│   ├── README.txt
-│   ├── recoding_disease.R
-│   └── Ss
-├── RandomForestTest.R
-├── RandomForestTest.sh
-├── RandomForestTest.sh.e3484204
-├── RandomForestTest.sh.e3484228
-├── RandomForestTest.sh.o3484204
-├── RandomForestTest.sh.o3484228
-├── README.md
-└── Ss
-    ├── Job_Submission_Step1Only.sh
-    ├── Job_Submission_Step2Only.sh
-    ├── Job_Submission_Step3Only.sh
-    ├── Job_Submission_Step4Only.sh
-    └── Job_Submission_Step6plusOnly-copy.sh
 ```
 
 &nbsp;
