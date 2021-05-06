@@ -93,13 +93,17 @@ Below are the list of packages and the version numbers required to reproduce the
 
 1. Clone the repo.
    ```sh
-   git clone https://github.com/xinzhao13/HDA_TDS.git
+   git clone https://github.com/xinzhao13/TDS_Group4.git
+   cd TDS_Group4
    ```
 2. Install dependencies listed above 👆.
-3. Locate the UKB and HES data.
-4. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html)
-5. Run the pipeline.
+3. Create "data" folder under the directory.
+4. Locate the UKB and HES data and save in the data folder.
+5. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
+6. Change
+7. Run the pipeline in the following order.
     ```sh
+    qsub Job_Submission_DataCreation.sh
     ````
 
 
