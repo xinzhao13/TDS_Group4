@@ -134,23 +134,26 @@ VennDiagram	        1.6.20
 
 ### Installation 🖱️
 
-1. Clone the repo.
+Clone the repo.
    ```sh
    git clone https://github.com/xinzhao13/TDS_Group4.git
    cd TDS_Group4
    ```
-2. Install R libraries listed above 👆 in your Conda R on the HPC. 
+
+### Preparation and running the pipeline 🖱️
+
+1. Install R libraries listed above 👆 in your Conda R on the HPC. 
     * It is recommended to submit the bash scripts to the HPC, and not to overloead RStudio Server. 
     * To navigate to Conda R, run the following code:
    ```sh
    module load anaconda3/personal
    R
    ``` 
-4. Create "data" folder under the directory.
-5. Locate the UKB and HES data and save in the data folder.
-6. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
-7. Change the path defined in all bash files from `path=/rds/general/project/hda_students_data/live/Group4/General/full_scripts` to your project directory.
-8. Run the pipeline in the following order to reproduce the project.
+2. Create "data" folder under the directory.
+3. Locate the UKB and HES data and save in the data folder.
+4. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
+5. Change the path defined in all bash files from `path=/rds/general/project/hda_students_data/live/Group4/General/full_scripts` to your project directory.
+6. Run the pipeline in the following order to reproduce the project.
     ```sh
     qsub Job_Submission_DataCreation.sh
     qsub Job_Submission_Visualisation1.sh
