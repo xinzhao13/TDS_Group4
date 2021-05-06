@@ -60,7 +60,7 @@ ycolon <- df %>% dplyr::select(c(colon))
 
 tic("IBD Random Forest Training 100 trees")
 print("IBD Random Forest 100 trees")
-# 1 tree takes 83 seconds, so 100 trees will take 2hrs 20 mins
+# This takes 100-140 minutes!
 rf.ibd <- randomForest(x=x, y=yibd$ibd, ntree=100, importance=TRUE)
 toc()
 
@@ -78,7 +78,7 @@ ibd <- importance
 
 tic("Colon Random Forest Training 100 trees")
 print("Colon Random Forest 100 trees")
-# 1 tree takes 83 seconds, so 100 trees will take 2hrs 20 mins
+# This takes 100-140 minutes!
 rf.colon <- randomForest(x=x, y=ycolon$colon, ntree=100, importance=TRUE)
 toc()
 
