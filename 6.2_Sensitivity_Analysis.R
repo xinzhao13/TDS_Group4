@@ -6,7 +6,6 @@
 # It is designed to run on the HPC server
 
 print("initiating Step 6.2 now (Sensitivity Analysis)")
-tic("Step 6.2")
 
 # It requires
 # > all previous steps
@@ -16,8 +15,11 @@ library(tidyverse)#installed
 library(tictoc)#installed
 library(data.table)#installed
 library(MendelianRandomization)#installed
+library(patchwork)
 # Documentation: https://cran.r-project.org/web/packages/MendelianRandomization/MendelianRandomization.pdf
 # Github repo: https://github.com/cran/MendelianRandomization
+
+tic("Step 6.2")
 
 args=commandArgs(trailingOnly=TRUE)
 nchunks=as.numeric(args[1])
@@ -283,12 +285,11 @@ X<-readRDS("corrected_betas_ibd.rds")  # beta=logOR and corrected, no se
 
 # Extract list of SNPs for later
 X_snps<-X$id
-
 # Pheno scanner -----------------------------------------------------
 
 # Export phenoscanner output to file
 for (i in (1:length(X_snps))){
-  
+  snp <- X_snps[i]
   snp_data<-phenoscanner(snp)
   write.table(snp_data,paste0(analysis,"1-2-phenoscanner_output.csv"),
               append=TRUE,sep="/")

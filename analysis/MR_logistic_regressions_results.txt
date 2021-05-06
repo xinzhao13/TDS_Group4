@@ -3287,3 +3287,900 @@ AIC: 6937.7
 
 Number of Fisher Scoring iterations: 10
 
+[1] "MR analyses: PRS-IBD related to different digestive cancers"
+ 
+[1] "colon cancer:"
+
+Call:
+glm(formula = colon ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.1162  -0.1156  -0.1155  -0.1154   3.1694  
+
+Coefficients:
+             Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -5.007253   0.017630 -284.025   <2e-16 ***
+PRS_ibd      0.002185   0.017633    0.124    0.901    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 38925  on 487296  degrees of freedom
+Residual deviance: 38925  on 487295  degrees of freedom
+AIC: 38929
+
+Number of Fisher Scoring iterations: 7
+
+ 
+ 
+ 
+ 
+ 
+[1] "small intestine cancer:"
+
+Call:
+glm(formula = small_intestine ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0395  -0.0275  -0.0263  -0.0251   4.0560  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.97052    0.07747 -102.891   <2e-16 ***
+PRS_ibd      0.14236    0.07754    1.836   0.0664 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3043.2  on 487295  degrees of freedom
+AIC: 3047.2
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectosigmoid cancer:"
+
+Call:
+glm(formula = rectosigmoid ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0571  -0.0433  -0.0420  -0.0408   3.8049  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.03147    0.04833 -145.483   <2e-16 ***
+PRS_ibd     -0.09097    0.04765   -1.909   0.0563 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6936.0  on 487296  degrees of freedom
+Residual deviance: 6932.4  on 487295  degrees of freedom
+AIC: 6936.4
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectal cancer:"
+
+Call:
+glm(formula = rectal ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0795  -0.0790  -0.0790  -0.0789   3.3998  
+
+Coefficients:
+             Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -5.768362   0.025706 -224.401   <2e-16 ***
+PRS_ibd     -0.002082   0.025700   -0.081    0.935    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 20553  on 487296  degrees of freedom
+Residual deviance: 20553  on 487295  degrees of freedom
+AIC: 20557
+
+Number of Fisher Scoring iterations: 8
+
+ 
+ 
+ 
+ 
+ 
+[1] "anal cancer:"
+
+Call:
+glm(formula = anal ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0359  -0.0273  -0.0264  -0.0255   4.0582  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.96630    0.07714 -103.266   <2e-16 ***
+PRS_ibd      0.10824    0.07738    1.399    0.162    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3044.7  on 487295  degrees of freedom
+AIC: 3048.7
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "liver cancer:"
+
+Call:
+glm(formula = liver ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0357  -0.0341  -0.0339  -0.0337   3.8819  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.46142    0.05979 -124.798   <2e-16 ***
+PRS_ibd      0.01781    0.05988    0.297    0.766    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 4738.5  on 487296  degrees of freedom
+Residual deviance: 4738.4  on 487295  degrees of freedom
+AIC: 4742.4
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "MR analyses: PRS-UC and PRS-CD related to different small intestine and rectosigmoid cancer"
+ 
+[1] "small intestine cancer by PRS-CD:"
+
+Call:
+glm(formula = small_intestine ~ PRS_cd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0420  -0.0276  -0.0263  -0.0250   4.1102  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -7.97234    0.07761 -102.72   <2e-16 ***
+PRS_cd       0.15402    0.07662    2.01   0.0444 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3042.6  on 487295  degrees of freedom
+AIC: 3046.6
+
+Number of Fisher Scoring iterations: 11
+
+ 
+ 
+ 
+ 
+ 
+[1] "small intestine cancer by PRS-UC:"
+
+Call:
+glm(formula = small_intestine ~ PRS_uc, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0400  -0.0278  -0.0263  -0.0248   4.0838  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -7.97484    0.07781 -102.49   <2e-16 ***
+PRS_uc       0.17034    0.07776    2.19   0.0285 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3041.8  on 487295  degrees of freedom
+AIC: 3045.8
+
+Number of Fisher Scoring iterations: 11
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectosigmoid cancer by PRS-CD:"
+
+Call:
+glm(formula = rectosigmoid ~ PRS_cd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0433  -0.0423  -0.0421  -0.0420   3.7591  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -7.02737    0.04813 -146.02   <2e-16 ***
+PRS_cd      -0.01011    0.04812   -0.21    0.834    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6936.0  on 487296  degrees of freedom
+Residual deviance: 6935.9  on 487295  degrees of freedom
+AIC: 6939.9
+
+Number of Fisher Scoring iterations: 9
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectosigmoid cancer by PRS-UC:"
+
+Call:
+glm(formula = rectosigmoid ~ PRS_uc, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0526  -0.0431  -0.0420  -0.0410   3.8177  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.02995    0.04826 -145.669   <2e-16 ***
+PRS_uc      -0.07250    0.04782   -1.516    0.129    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6936.0  on 487296  degrees of freedom
+Residual deviance: 6933.7  on 487295  degrees of freedom
+AIC: 6937.7
+
+Number of Fisher Scoring iterations: 10
+
+[1] "MR analyses: PRS-IBD related to different digestive cancers"
+ 
+[1] "colon cancer:"
+
+Call:
+glm(formula = colon ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.1162  -0.1156  -0.1155  -0.1154   3.1694  
+
+Coefficients:
+             Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -5.007253   0.017630 -284.025   <2e-16 ***
+PRS_ibd      0.002185   0.017633    0.124    0.901    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 38925  on 487296  degrees of freedom
+Residual deviance: 38925  on 487295  degrees of freedom
+AIC: 38929
+
+Number of Fisher Scoring iterations: 7
+
+ 
+ 
+ 
+ 
+ 
+[1] "small intestine cancer:"
+
+Call:
+glm(formula = small_intestine ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0395  -0.0275  -0.0263  -0.0251   4.0560  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.97052    0.07747 -102.891   <2e-16 ***
+PRS_ibd      0.14236    0.07754    1.836   0.0664 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3043.2  on 487295  degrees of freedom
+AIC: 3047.2
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectosigmoid cancer:"
+
+Call:
+glm(formula = rectosigmoid ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0571  -0.0433  -0.0420  -0.0408   3.8049  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.03147    0.04833 -145.483   <2e-16 ***
+PRS_ibd     -0.09097    0.04765   -1.909   0.0563 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6936.0  on 487296  degrees of freedom
+Residual deviance: 6932.4  on 487295  degrees of freedom
+AIC: 6936.4
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectal cancer:"
+
+Call:
+glm(formula = rectal ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0795  -0.0790  -0.0790  -0.0789   3.3998  
+
+Coefficients:
+             Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -5.768362   0.025706 -224.401   <2e-16 ***
+PRS_ibd     -0.002082   0.025700   -0.081    0.935    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 20553  on 487296  degrees of freedom
+Residual deviance: 20553  on 487295  degrees of freedom
+AIC: 20557
+
+Number of Fisher Scoring iterations: 8
+
+ 
+ 
+ 
+ 
+ 
+[1] "anal cancer:"
+
+Call:
+glm(formula = anal ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0359  -0.0273  -0.0264  -0.0255   4.0582  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.96630    0.07714 -103.266   <2e-16 ***
+PRS_ibd      0.10824    0.07738    1.399    0.162    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3044.7  on 487295  degrees of freedom
+AIC: 3048.7
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "liver cancer:"
+
+Call:
+glm(formula = liver ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0357  -0.0341  -0.0339  -0.0337   3.8819  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.46142    0.05979 -124.798   <2e-16 ***
+PRS_ibd      0.01781    0.05988    0.297    0.766    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 4738.5  on 487296  degrees of freedom
+Residual deviance: 4738.4  on 487295  degrees of freedom
+AIC: 4742.4
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "MR analyses: PRS-UC and PRS-CD related to different small intestine and rectosigmoid cancer"
+ 
+[1] "small intestine cancer by PRS-CD:"
+
+Call:
+glm(formula = small_intestine ~ PRS_cd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0420  -0.0276  -0.0263  -0.0250   4.1102  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -7.97234    0.07761 -102.72   <2e-16 ***
+PRS_cd       0.15402    0.07662    2.01   0.0444 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3042.6  on 487295  degrees of freedom
+AIC: 3046.6
+
+Number of Fisher Scoring iterations: 11
+
+ 
+ 
+ 
+ 
+ 
+[1] "small intestine cancer by PRS-UC:"
+
+Call:
+glm(formula = small_intestine ~ PRS_uc, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0400  -0.0278  -0.0263  -0.0248   4.0838  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -7.97484    0.07781 -102.49   <2e-16 ***
+PRS_uc       0.17034    0.07776    2.19   0.0285 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3041.8  on 487295  degrees of freedom
+AIC: 3045.8
+
+Number of Fisher Scoring iterations: 11
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectosigmoid cancer by PRS-CD:"
+
+Call:
+glm(formula = rectosigmoid ~ PRS_cd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0433  -0.0423  -0.0421  -0.0420   3.7591  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -7.02737    0.04813 -146.02   <2e-16 ***
+PRS_cd      -0.01011    0.04812   -0.21    0.834    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6936.0  on 487296  degrees of freedom
+Residual deviance: 6935.9  on 487295  degrees of freedom
+AIC: 6939.9
+
+Number of Fisher Scoring iterations: 9
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectosigmoid cancer by PRS-UC:"
+
+Call:
+glm(formula = rectosigmoid ~ PRS_uc, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0526  -0.0431  -0.0420  -0.0410   3.8177  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.02995    0.04826 -145.669   <2e-16 ***
+PRS_uc      -0.07250    0.04782   -1.516    0.129    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6936.0  on 487296  degrees of freedom
+Residual deviance: 6933.7  on 487295  degrees of freedom
+AIC: 6937.7
+
+Number of Fisher Scoring iterations: 10
+
+[1] "MR analyses: PRS-IBD related to different digestive cancers"
+ 
+[1] "colon cancer:"
+
+Call:
+glm(formula = colon ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.1162  -0.1156  -0.1155  -0.1154   3.1694  
+
+Coefficients:
+             Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -5.007253   0.017630 -284.025   <2e-16 ***
+PRS_ibd      0.002185   0.017633    0.124    0.901    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 38925  on 487296  degrees of freedom
+Residual deviance: 38925  on 487295  degrees of freedom
+AIC: 38929
+
+Number of Fisher Scoring iterations: 7
+
+ 
+ 
+ 
+ 
+ 
+[1] "small intestine cancer:"
+
+Call:
+glm(formula = small_intestine ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0395  -0.0275  -0.0263  -0.0251   4.0560  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.97052    0.07747 -102.891   <2e-16 ***
+PRS_ibd      0.14236    0.07754    1.836   0.0664 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3043.2  on 487295  degrees of freedom
+AIC: 3047.2
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectosigmoid cancer:"
+
+Call:
+glm(formula = rectosigmoid ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0571  -0.0433  -0.0420  -0.0408   3.8049  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.03147    0.04833 -145.483   <2e-16 ***
+PRS_ibd     -0.09097    0.04765   -1.909   0.0563 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6936.0  on 487296  degrees of freedom
+Residual deviance: 6932.4  on 487295  degrees of freedom
+AIC: 6936.4
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectal cancer:"
+
+Call:
+glm(formula = rectal ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0795  -0.0790  -0.0790  -0.0789   3.3998  
+
+Coefficients:
+             Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -5.768362   0.025706 -224.401   <2e-16 ***
+PRS_ibd     -0.002082   0.025700   -0.081    0.935    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 20553  on 487296  degrees of freedom
+Residual deviance: 20553  on 487295  degrees of freedom
+AIC: 20557
+
+Number of Fisher Scoring iterations: 8
+
+ 
+ 
+ 
+ 
+ 
+[1] "anal cancer:"
+
+Call:
+glm(formula = anal ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0359  -0.0273  -0.0264  -0.0255   4.0582  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.96630    0.07714 -103.266   <2e-16 ***
+PRS_ibd      0.10824    0.07738    1.399    0.162    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3044.7  on 487295  degrees of freedom
+AIC: 3048.7
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "liver cancer:"
+
+Call:
+glm(formula = liver ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0357  -0.0341  -0.0339  -0.0337   3.8819  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.46142    0.05979 -124.798   <2e-16 ***
+PRS_ibd      0.01781    0.05988    0.297    0.766    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 4738.5  on 487296  degrees of freedom
+Residual deviance: 4738.4  on 487295  degrees of freedom
+AIC: 4742.4
+
+Number of Fisher Scoring iterations: 10
+
+ 
+ 
+ 
+ 
+ 
+[1] "MR analyses: PRS-UC and PRS-CD related to different small intestine and rectosigmoid cancer"
+ 
+[1] "small intestine cancer by PRS-CD:"
+
+Call:
+glm(formula = small_intestine ~ PRS_cd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0420  -0.0276  -0.0263  -0.0250   4.1102  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -7.97234    0.07761 -102.72   <2e-16 ***
+PRS_cd       0.15402    0.07662    2.01   0.0444 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3042.6  on 487295  degrees of freedom
+AIC: 3046.6
+
+Number of Fisher Scoring iterations: 11
+
+ 
+ 
+ 
+ 
+ 
+[1] "small intestine cancer by PRS-UC:"
+
+Call:
+glm(formula = small_intestine ~ PRS_uc, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0400  -0.0278  -0.0263  -0.0248   4.0838  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -7.97484    0.07781 -102.49   <2e-16 ***
+PRS_uc       0.17034    0.07776    2.19   0.0285 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3046.6  on 487296  degrees of freedom
+Residual deviance: 3041.8  on 487295  degrees of freedom
+AIC: 3045.8
+
+Number of Fisher Scoring iterations: 11
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectosigmoid cancer by PRS-CD:"
+
+Call:
+glm(formula = rectosigmoid ~ PRS_cd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0433  -0.0423  -0.0421  -0.0420   3.7591  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -7.02737    0.04813 -146.02   <2e-16 ***
+PRS_cd      -0.01011    0.04812   -0.21    0.834    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6936.0  on 487296  degrees of freedom
+Residual deviance: 6935.9  on 487295  degrees of freedom
+AIC: 6939.9
+
+Number of Fisher Scoring iterations: 9
+
+ 
+ 
+ 
+ 
+ 
+[1] "rectosigmoid cancer by PRS-UC:"
+
+Call:
+glm(formula = rectosigmoid ~ PRS_uc, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0526  -0.0431  -0.0420  -0.0410   3.8177  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -7.02995    0.04826 -145.669   <2e-16 ***
+PRS_uc      -0.07250    0.04782   -1.516    0.129    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6936.0  on 487296  degrees of freedom
+Residual deviance: 6933.7  on 487295  degrees of freedom
+AIC: 6937.7
+
+Number of Fisher Scoring iterations: 10
+

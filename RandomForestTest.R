@@ -67,7 +67,7 @@ toc()
 importance<-rf.ibd$importance
 #print("IBD Variable Importance as Measured by Mean Decrease Accuracy:")
 #importance[order(importance[,3], decreasing =TRUE),] [1:30,]
-#saveRDS(importance, "ukb_ML_rf_IBD_importance.rds")
+saveRDS(importance, "ukb_ML_rf_IBD_importance.rds")
 ibd <- importance
 
 #png("ukb_ML_rf_varImpPlotIBD.png")
@@ -85,7 +85,7 @@ toc()
 importance=rf.colon$importance
 #print("Colon Variable Importance as Measured by Mean Decrease Accuracy:")
 #importance[order(importance[,3], decreasing =TRUE),] [1:30,]
-#saveRDS(importance, "ukb_ML_rf_Colon_importance.rds")
+saveRDS(importance, "ukb_ML_rf_Colon_importance.rds")
 colon <- importance
 
 #png("ukb_ML_rf_varImpPlotColon.png")
@@ -99,43 +99,44 @@ colon <- importance
 #ibd <- readRDS("ukb_ML_rf_IBD_importance.rds")
 
 # We need to pick a threshold: either the top X predictors, or a minimum MeanDecreaseAccuracy, or Gini
-
 #colon[order(colon[,3], decreasing =TRUE),] [1:10,]
 #ibd[order(ibd[,3], decreasing =TRUE),] [1:10,]
 
-# I picked an arbitrary value of 230 as the Gini threshold, as this should work fine no matter the balance between case and control:
-
 # Plots to figure out where to threshold
-#library(ggplot2)
-#ibd_data <- cbind(as.data.frame(ibd),rownames(ibd)) %>% transmute(ibdpredictors = rownames(ibd), MeanDecreaseAccuracy) %>% arrange(desc(MeanDecreaseAccuracy))
-#ggplot(ibd_data, aes(x=reorder(ibdpredictors, MeanDecreaseAccuracy),y=MeanDecreaseAccuracy)) + geom_point()
+library(ggplot2)
+ibd_data <- cbind(as.data.frame(ibd),rownames(ibd)) %>% transmute(ibdpredictors = rownames(ibd), MeanDecreaseAccuracy) %>% arrange(desc(MeanDecreaseAccuracy))
+ggplot(ibd_data, aes(x=reorder(ibdpredictors, MeanDecreaseAccuracy),y=MeanDecreaseAccuracy)) + geom_point()
 
-#colon_data <- cbind(as.data.frame(colon),rownames(colon)) %>% transmute(colonpredictors = rownames(colon), MeanDecreaseAccuracy) %>% arrange(desc(MeanDecreaseAccuracy))
-#ggplot(colon_data, aes(x=reorder(colonpredictors, MeanDecreaseAccuracy),y=MeanDecreaseAccuracy)) + geom_point()
+colon_data <- cbind(as.data.frame(colon),rownames(colon)) %>% transmute(colonpredictors = rownames(colon), MeanDecreaseAccuracy) %>% arrange(desc(MeanDecreaseAccuracy))
+ggplot(colon_data, aes(x=reorder(colonpredictors, MeanDecreaseAccuracy),y=MeanDecreaseAccuracy)) + geom_point()
 
 # Based on the plots, there seems to be a clear drop-off, so I will set the threshold there!
 threshold = 0.0003
 
-colon_gini_predictors <- colon %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold) %>% arrange(desc(MeanDecreaseAccuracy))
-#print(colon_gini_predictors)
-#dim(colon_gini_predictors)
-colon_gini_predictors <- rownames(colon_gini_predictors)
-colon_length <- length(colon_gini_predictors)
+colon_predictors <- colon %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold) %>% arrange(desc(MeanDecreaseAccuracy))
+#print(colon_predictors)
+#dim(colon_predictors)
+colon_predictors <- rownames(colon_predictors)
+colon_length <- length(colon_predictors)
+print("Colon Permutation Predictors")
+print(colon_predictors)
 
-ibd_gini_predictors <- ibd  %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold)%>% arrange(desc(MeanDecreaseAccuracy))
-#print(ibd_gini_predictors)
-#dim(ibd_gini_predictors)
-ibd_gini_predictors <- rownames(ibd_gini_predictors)
-ibd_length <- length(ibd_gini_predictors)
+ibd_predictors <- ibd  %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold)%>% arrange(desc(MeanDecreaseAccuracy))
+#print(ibd_predictors)
+#dim(ibd_predictors)
+ibd_predictors <- rownames(ibd_predictors)
+ibd_length <- length(ibd_predictors)
+print("IBD Permutation Predictors")
+print(ibd_predictors)
 
-#ibd_gini_predictors_l <- c(ibd_gini_predictors, c(0,0))
-#predictors <- cbind(ibd_gini_predictors_l,colon_gini_predictors)
+#ibd_predictors_l <- c(ibd_predictors, c(0,0))
+#predictors <- cbind(ibd_predictors_l,colon_predictors)
 #predictors
 
 # Then we can do an inner join on the variable names, and make a Venn diagram
 
 print("Now we are doing the inner join")
-joint_predictors <- inner_join(as.data.frame(ibd_gini_predictors), as.data.frame(colon_gini_predictors), by=c("ibd_gini_predictors"="colon_gini_predictors")) 
+joint_predictors <- inner_join(as.data.frame(ibd_predictors), as.data.frame(colon_predictors), by=c("ibd_predictors"="colon_predictors")) 
 #print("joint predictors are: (and saving as ukb_ML_randomforest_jointpredictors_perm.rds)")
 #print(joint_predictors)
 saveRDS(joint_predictors,"ukb_ML_randomforest_jointpredictors_perm.rds")

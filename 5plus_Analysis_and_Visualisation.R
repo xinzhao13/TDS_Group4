@@ -57,6 +57,7 @@ y_ibd<-newdata[,'ibd1'] #for gLASSO on ibd
 #y_c[80]<-1
 #y_ibd<-y_ibd[1:100]
 
+print("Data loaded, now creating corresponding group file")
 #create corresponding group file
 cols<-colnames(X) 
 groups<-1 
@@ -68,7 +69,7 @@ for (i in 2:(length(cols))) { #loop over all colnames starting from position2
   }
   groups<-c(groups,g) #add group number to group list
 }
-
+print("Now fitting group Lasso incl. Stability analysis")
 #fit group lasso incl. stability analysis
 gLassoSub = function(k , Xdata, Ydata, Groups, Nfolds=5) {
   set.seed(k)
@@ -81,7 +82,7 @@ gLassoSub = function(k , Xdata, Ydata, Groups, Nfolds=5) {
   fit <- oem(x = Xsub, y = Ysub, penalty = c("grp.lasso"), family = "binomial", groups = Groups, lambda = cvfit1$lambda.1se.models)
   return(fit$beta$grp.lasso) 
 }
-
+print("Launching parallelisation now")
 t0=Sys.time()
 #start cluster for parallelization
 no_cores=min(detectCores(), nchunks)
@@ -90,19 +91,21 @@ cl <- makeCluster(no_cores, type="FORK")
 #run stability analysis
 niter = 1000 # iterations for stability analysis
 lasso.stab_ibd = parSapply(cl=cl, 1:niter, FUN = gLassoSub, Xdata = X,   Ydata = y_ibd, Groups=groups, Nfolds=5)
+print("Half way through the parallelisation")
 lasso.stab_c = parSapply(cl=cl, 1:niter, FUN = gLassoSub, Xdata = X,   Ydata = y_c, Groups=groups, Nfolds=5)
 
 #stop cluster
 stopCluster(cl)
 
 t1=Sys.time()
+print("End of parallelisation")
 computation_time=difftime(t1,t0, units="secs")
 print(computation_time)
 
 rownames(lasso.stab_ibd)<-c('Intercept',cols) #add variable names to dataset
 rownames(lasso.stab_c)<-c('Intercept',cols) #add variable names to dataset
 
-
+print("Now exploring results")
 #------------------explore results-------------------------#
 countNonzero<-function(x,dat){
   sum(dat[x,]!=0)
@@ -151,7 +154,7 @@ colon_vars<-rownames(result_colon_nzero)[-1]
 
 #extract intersect
 intersect<- ibd_vars[ibd_vars%in% colon_vars]
-
+print("Just saving RDS now")
 #save data
 saveRDS(intersect, file=paste0(datapath,'Lasso_intersect.rds'))
 
@@ -178,7 +181,7 @@ raw_data[,factors] <- lapply(raw_data[,factors] , factor)
 raw_data[,continuous] <- lapply(raw_data[,continuous] , as.numeric)
 
 #impute missing values with median/mode
-imp_data<-impute(raw_data)
+imp_data<-imputeMissings::impute(raw_data)
 
 ###unadjusted model
 fit_unadjusted<-glm(colon~ibd, family = binomial(link=logit), data=imp_data)
@@ -191,7 +194,7 @@ corrections <- data.frame(
   good = c("handsfree_device_last3mo", "alcohol_vs_10yrs", "X5asa", "C.reactive_protein", "glycated_haemoglobin.HbA1c.", "igf.1") ,
   stringsAsFactors = FALSE
 )
-
+print("Reading in LASSO selected variables")
 ###only lasso selected variables
 vars_lasso <- readRDS("Lasso_intersect.rds")
 vars_lasso<-c('colon','ibd', match_vec(vars_lasso, corrections)) #correcting changed var names and adding colon and ibd
@@ -201,6 +204,7 @@ fit_adjusted_lasso<-glm(colon~., family = binomial(link=logit), data=data_lasso)
 summary(fit_adjusted_lasso)
 exp(coef(summary(fit_adjusted_lasso)))
 
+print("Reading in random forest selected variables")
 ###random forest selected variables
 rf_pred <- readRDS("ukb_ML_randomforest_jointpredictors_perm.rds")
 rf_pred[] <- lapply(rf_pred, as.character)
@@ -213,6 +217,7 @@ fit_adjusted_rf<-glm(colon~., family = binomial(link=logit), data=data_rf)
 #exp(coef(summary(fit_adjusted_rf)))
 #vif(fit_adjusted_rf)
 
+print("Reading in sPLS selected variables")
 ###sPLS selected variables
 #read in Nas' file? somehow not possible
 vars_pls<-c('colon','ibd',"age","smoking_status","household_income","days_vigorous_activity_per_week","usual_walking_pace","nap_during_day", 
@@ -226,7 +231,7 @@ fit_adjusted_pls<-glm(colon~., family = binomial(link=logit), data=data_pls)
 #exp(coef(summary(fit_adjusted_pls)))
 
 
-
+print("Writing to file")
 # Write to file
 sink(file=paste0(analysis,"Attenuation_logistic_regressions_results.txt"), type="output", append=TRUE)
 print('Unadjusted model:')

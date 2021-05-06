@@ -1,0 +1,6 @@
+setwd("/rds/general/project/hda_students_data/live/Group4/General/full_scripts/")
+packages <- as.data.frame(installed.packages()[,c(1,3:4)])
+dim(packages)
+head(packages)
+str(packages)
+saveRDS(packages,"packages.rds")

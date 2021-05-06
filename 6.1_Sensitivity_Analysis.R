@@ -132,7 +132,7 @@ colnames(mymodel)=gsub(" ", "", colnames(mymodel))
 #print(mymodel)
 
 # Saving confounders file
-write.table(mymodel, paste0(analysis,"0-1-confounders.txt"), row.names=FALSE, col.names=TRUE, quote=FALSE, sep=" ")
+write.table(mymodel, "0-1-confounders.txt", row.names=FALSE, col.names=TRUE, quote=FALSE, sep=" ")
 
 toc()
 
@@ -169,6 +169,7 @@ for (i in (1:length(X_snps))){  # XZ updated 05/05/2021
   print(paste0("Progress: ",i,"/",length(X_snps)))  
 }
 toc()
+dir.create(file.path(getwd(), "v4"), showWarnings = FALSE)
 
 #----------------- 6d Run mini GWAS -----------------#
 # Original code is 0-3-logistic_geno.sh by Xin

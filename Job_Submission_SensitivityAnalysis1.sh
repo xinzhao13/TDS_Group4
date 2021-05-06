@@ -16,3 +16,5 @@ date
 # STEP 6 : 
 
 Rscript 6.1_Sensitivity_Analysis.R $nchunks $path
+
+date

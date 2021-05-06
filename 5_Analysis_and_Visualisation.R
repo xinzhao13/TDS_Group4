@@ -1,6 +1,6 @@
 #----------------- 5: Analysis & Visualisation -----------------#
 
-# This script is complete and takes about XXXX mins to run
+# This script is complete and takes about 28+RF mins to run
 
 # This script performs the actions of Analysis & Visualisation, defined by this flowchart: https://whimsical.com/tds-r-scripts-and-data-flow-VmAm6BzY1jUML2a32569t2
 # It is designed to run on the HPC server
@@ -27,7 +27,7 @@ library(gsubfn) #installed
 library(randomForest)#installed
 library(gridExtra) #installed
 library(Hmisc)#installed
-
+library(RColorBrewer)
 
 args=commandArgs(trailingOnly=TRUE)
 nchunks=as.numeric(args[1])
@@ -433,7 +433,7 @@ toc()
 
 #----------------- 5d Standardisation and Dummy Variable Creation -----------------#
 # Original code is createMatrixLasso.R by Marie
-# This step works and takes between XX & XX mins to run
+# This step works and takes 60s to run
 print("Starting 5d")
 tic("Step 5d")
 
@@ -454,16 +454,15 @@ raw_data[,continuous] <- lapply(raw_data[,continuous] , as.numeric)
 print("Now we're imputing values")
 tic("Now imputing values")
 #impute missing values with median/mode
-imp_data<-impute(raw_data)
+imp_data<-imputeMissings::impute(raw_data)
 saveRDS(imp_data,"imputed_everything.rds")
 toc()
 
 #drop irrelevant cols for variable selection
 print("Dropping irrelevant columns")
-#setwd("/rds/general/project/hda_students_data/live/Group4/General/full_scripts/data")
-imp_data<-readRDS("imputed_everything.rds")
-imp_data<-as.data.frame(imp_data)
-print("re-imported rds")
+#imp_data<-readRDS("imputed_everything.rds")
+#imp_data<-as.data.frame(imp_data)
+#print("re-imported rds")
 irrelevant<-c("eid", "PRS_ibd", "PRS_uc", "PRS_cd","cd","uc", "small_intestine", "rectosigmoid", "rectal", "anal", "liver")
 relevant_data<-imp_data[,!(names(imp_data) %in% irrelevant)]
 
@@ -483,7 +482,7 @@ toc()
 
 #----------------- 5e sPLS -----------------#
 # Original code is sPLS.R by Nasirdin 
-# This step works and takes between XX & XX mins to run
+# This step works and takes 24 mins to run
 print("Starting 5e")
 tic("Step 5e")
 
@@ -605,6 +604,7 @@ toc()
 print("Starting 5f")
 tic("Step 5f")
 
+#setwd("/rds/general/project/hda_students_data/live/Group4/General/full_scripts/data")
 df <-imp_data#readRDS("imputed_everything.rds")
 
 #------------------------ Get x and y dataframes
@@ -636,7 +636,7 @@ ibd <- importance
 tic("Colon Random Forest Training 100 trees")
 print("Colon Random Forest 100 trees")
 # 1 tree takes 83 seconds, so 100 trees will take 2hrs 20 mins
-rf.colon <- randomForest(x=x, y=yibd$ibd, ntree=100, importance=TRUE)
+rf.colon <- randomForest(x=x, y=ycolon$colon, ntree=100, importance=TRUE)
 toc()
 
 importance=rf.colon$importance
