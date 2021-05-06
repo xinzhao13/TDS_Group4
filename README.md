@@ -1,7 +1,7 @@
 # HDA TDS Group 4
 ## About this project 📽️
 
-This project is prepared for the Translational Data Science module as part of MSc Health Data Analytics and Machine Learning. Group 4 has been tasked to utilise UK Biobank (UKB) and implement one of the most cutting-edge techniques Mendelian Randomisation in Computational Epidemiology to assess the causal relationship between Inflammatory Bowel Disease (IBD), its subtypes Crohn's Disease (CD) and Ulcerative Colitis (UC), and Colon Cancer. Our main population comes from the European cohort of Inflammatory Bowel Disease Genetics Consortium (IBDGC), and the validation was performed in the UKB cohort. Hospital Episode Statistics (HES) was provided as part of the UKB data.
+This project is prepared for the Translational Data Science module as part of MSc Health Data Analytics and Machine Learning. Group 4 has been tasked to utilise UK Biobank (UKB) and implement one of the most cutting-edge techniques Mendelian Randomisation in Computational Epidemiology to assess the causal relationship between Inflammatory Bowel Disease (IBD), its subtypes Crohn's Disease (CD) and Ulcerative Colitis (UC), and Colon Cancer. Our main population comes from the European cohort of Inflammatory Bowel Disease Genetics Consortium (IIBDGC), and the validation was performed in the UKB cohort. Hospital Episode Statistics (HES) was provided as part of the UKB data.
 
 For the detailed description of the data sources, data processing and analysis please see the full report.
 
@@ -29,6 +29,8 @@ The following files identifies UKB participants by eid:
 | GWAS_PCs.rds        | First 10 PCs of the UKB genotype data |
 | hesin_diag.txt      | HES medical diagnosis                 |
 | w19266_20200204.csv | List of withdrawn participants        |
+
+&nbsp;
 
 The following files come from IIBDGC:
 | File name                          | Description                                           |
