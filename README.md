@@ -129,12 +129,16 @@ VennDiagram	        1.6.20
    git clone https://github.com/xinzhao13/TDS_Group4.git
    cd TDS_Group4
    ```
-2. Install dependencies listed above 👆.
-3. Create "data" folder under the directory.
-4. Locate the UKB and HES data and save in the data folder.
-5. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
-6. Change
-7. Run the pipeline in the following order.
+2. Install R libraries listed above 👆 in your Conda R. To navigate to Conda R
+   ```sh
+   module load anaconda3/personal
+   R
+   ``` 
+4. Create "data" folder under the directory.
+5. Locate the UKB and HES data and save in the data folder.
+6. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
+7. Change
+8. Run the pipeline in the following order.
     ```sh
     qsub Job_Submission_DataCreation.sh
     ````
