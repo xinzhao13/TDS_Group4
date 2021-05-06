@@ -67,15 +67,14 @@ The following R scripts will be run sequentially by the respective bash scripts:
 
 The following bash scripts calls the R scripts above:
 
-| Bash script                     | Description |
-|---------------------------------|-------------|
-| 
-| Job_Submission_Step3Only.sh     |             |
-| Job_Submission_Step4Only.sh     |             |
-| Job_Submission_Step5Only.sh     |             |
-| Job_Submission_Step5plusOnly.sh |             |
-| Job_Submission_Step6Only.sh     |             |
-
+| Bash script                            | Description                                                                                                                                     |
+|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| Job_Submission_DataCreation.sh         | Runs 1_SNP_List_Creation.R, 2_Genetic_Data_Creation.R,   3_Outcome_Covariate_Data_Creation.R and 4_Final_Data_Creation.R in sequential   order. |
+| qsub Job_Submission_Visualisation1.sh  | Runs 5_Analysis_and_Visualisation.R.                                                                                                            |
+| qsub Job_Submission_Visualisation2.sh  | Runs 5plus_Analysis_and_Visualisation.R.                                                                                                        |
+| Job_Submission_SensitivityAnalysis1.sh | Runs 6.1_Sensitivity_Analysis.R.                                                                                                                |
+| Job_Submission_SensitivityAnalysis2.sh | Runs the multivariable logistic regressions at SNP level against colon   cancer.                                                                |
+| Job_Submission_SensitivityAnalysis3.sh | Runs 6.2_Sensitivity_Analysis.R.                                                                                                                |
 
 &nbsp;
 
