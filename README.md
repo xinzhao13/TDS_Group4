@@ -42,7 +42,7 @@ The following files come from IIBDGC:
 
 ## Key scripts 📜
 
-The following R scripts should be run sequentially by the respective .sh scripts:
+The following R scripts will be run sequentially by the respective bash scripts:
 | R script                            | Description                                                                                                                                                                                                                                     |
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1_SNP_List_Creation.R               | Selects the IBD-associated SNPs (and also for UC, CD separately) from IIBDGC, this includes clumping and the removal of rare variants.                                                                                                          |
@@ -57,6 +57,19 @@ The following R scripts should be run sequentially by the respective .sh scripts
 
 &nbsp;
 
+The following bash scripts calls the R scripts above:
+
+| Bash script                     | Description |
+|---------------------------------|-------------|
+| Job_Submission_Step2Only.sh     |             |
+| Job_Submission_Step3Only.sh     |             |
+| Job_Submission_Step4Only.sh     |             |
+| Job_Submission_Step5Only.sh     |             |
+| Job_Submission_Step5plusOnly.sh |             |
+| Job_Submission_Step6Only.sh     |             |
+
+
+&nbsp;
 
 ## Getting started ✈️
 
