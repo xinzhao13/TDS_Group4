@@ -110,9 +110,9 @@ Below are the list of packages and the version numbers required to reproduce the
 ### HPC folder structure 🗄️
 ```bash
 .
-├── analysis
-├── data
-└── original
+├── analysis    # outputs and plots
+├── data        # data folder 
+└── original    # the original demonstrative scripts
 
 ```
 
