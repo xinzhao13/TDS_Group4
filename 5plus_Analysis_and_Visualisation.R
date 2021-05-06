@@ -166,6 +166,7 @@ print("Starting step 5h")
 tic("Step 5h")
 
 #set path
+#setwd("/rds/general/project/hda_students_data/live/Group4/General/full_scripts/data/")
 
 #read data and specify factors/numerical variables
 raw_data<-readRDS('ukb_hes_everything.rds')
