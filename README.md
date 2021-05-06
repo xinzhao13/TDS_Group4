@@ -131,7 +131,7 @@ tidyverse	        1.3.0
 utils	                3.6.1
 VennDiagram	        1.6.20
   ```
-Many of the above can be installed using the yaml file provided. However, the following requires separate installation.
+Many of the above can be installed using `magic.yml` provided. However, the following requires separate installation.
   ```sh
 Packages	        Version
 bit64	                4.0.5
