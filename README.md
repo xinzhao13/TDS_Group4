@@ -129,7 +129,9 @@ VennDiagram	        1.6.20
    git clone https://github.com/xinzhao13/TDS_Group4.git
    cd TDS_Group4
    ```
-2. Install R libraries listed above 👆 in your Conda R on the HPC. It is recommended to submit the bash scripts to the HPC, and not to overloead RStudio Server. To navigate to Conda, run the following code:
+2. Install R libraries listed above 👆 in your Conda R on the HPC. 
+    * It is recommended to submit the bash scripts to the HPC, and not to overloead RStudio Server. 
+    * To navigate to Conda, run the following code:
    ```sh
    module load anaconda3/personal
    R
