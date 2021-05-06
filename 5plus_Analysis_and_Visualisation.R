@@ -183,7 +183,7 @@ raw_data[,continuous] <- lapply(raw_data[,continuous] , as.numeric)
 
 #impute missing values with median/mode
 imp_data<-imputeMissings::impute(raw_data)
-
+#imp_data<-readRDS('imputed_everything.rds')
 ###unadjusted model
 fit_unadjusted<-glm(colon~ibd, family = binomial(link=logit), data=imp_data)
 #summary(fit_unadjusted)
