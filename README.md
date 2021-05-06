@@ -149,8 +149,8 @@ VennDiagram	        1.6.20
 4. Create "data" folder under the directory.
 5. Locate the UKB and HES data and save in the data folder.
 6. Download the summarised data from IBD Genetics Consortium from [here](https://www.ibdgenetics.org/downloads.html) and save in the data folder.
-7. Change
 8. Run the pipeline in the following order to reproduce the project.
+    * Note that the path defined in all bash files below needs to be updated from `path=/rds/general/project/hda_students_data/live/Group4/General/full_scripts` to your project directory.
     ```sh
     qsub Job_Submission_DataCreation.sh
     qsub Job_Submission_Visualisation1.sh
