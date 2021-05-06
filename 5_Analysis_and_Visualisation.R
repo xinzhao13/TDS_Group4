@@ -26,7 +26,7 @@ library(ROSE) #installed
 library(gsubfn) #installed
 library(randomForest)#installed
 library(gridExtra) #installed
-library(Hmisc)#ERROR #...
+library(Hmisc)#installed
 
 
 args=commandArgs(trailingOnly=TRUE)
@@ -460,6 +460,7 @@ toc()
 
 #drop irrelevant cols for variable selection
 print("Dropping irrelevant columns")
+#setwd("/rds/general/project/hda_students_data/live/Group4/General/full_scripts/data")
 imp_data<-readRDS("imputed_everything.rds")
 imp_data<-as.data.frame(imp_data)
 print("re-imported rds")
@@ -468,7 +469,7 @@ relevant_data<-imp_data[,!(names(imp_data) %in% irrelevant)]
 
 #standardize continuous values
 print("standardising continuous values")
-relevant_data[,(names(relevant_data) %in% continuous)] <- scale( relevant_data[,(names(relevant_data) %in% continuous)] )
+relevant_data[,(names(relevant_data) %in% continuous)] <- scale(relevant_data[,(names(relevant_data) %in% continuous)] )
 
 #make factors dummy variables
 print("making factors dummy vars")

@@ -862,3 +862,195 @@ Number of Fisher Scoring iterations: 7
 McFadden                          0.008418660
 Cox and Snell (ML)                0.000962091
 Nagelkerke (Cragg and Uhler)      0.008904820
+[1] "Logistic regressions between PRS and their related disease and their nagelkerke pseudo R-squared:"
+[1] "IBD by PRS IBD:"
+
+Call:
+glm(formula = ibd ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.4808  -0.1856  -0.1640  -0.1442   3.5629  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -4.30160    0.01287 -334.17   <2e-16 ***
+PRS_ibd      0.38555    0.01232   31.29   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 73165  on 487296  degrees of freedom
+Residual deviance: 72175  on 487295  degrees of freedom
+AIC: 72179
+
+Number of Fisher Scoring iterations: 7
+
+                             Pseudo.R.squared
+McFadden                           0.01352680
+Cox and Snell (ML)                 0.00202891
+Nagelkerke (Cragg and Uhler)       0.01455290
+ 
+ 
+ 
+ 
+ 
+[1] "CD by PRS CD:"
+
+Call:
+glm(formula = cd ~ PRS_cd, family = binomial(link = logit), data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3850  -0.1158  -0.1002  -0.0866   3.7967  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -5.28868    0.02108 -250.91   <2e-16 ***
+PRS_cd       0.44597    0.01904   23.43   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 33441  on 487296  degrees of freedom
+Residual deviance: 32900  on 487295  degrees of freedom
+AIC: 32904
+
+Number of Fisher Scoring iterations: 8
+
+                             Pseudo.R.squared
+McFadden                           0.01617500
+Cox and Snell (ML)                 0.00110941
+Nagelkerke (Cragg and Uhler)       0.01672710
+ 
+ 
+ 
+ 
+ 
+[1] "UC by PRS UC:"
+
+Call:
+glm(formula = uc ~ PRS_uc, family = binomial(link = logit), data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3015  -0.1556  -0.1407  -0.1263   3.4600  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -4.61692    0.01488  -310.3   <2e-16 ***
+PRS_uc       0.31308    0.01456    21.5   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 55715  on 487296  degrees of freedom
+Residual deviance: 55246  on 487295  degrees of freedom
+AIC: 55250
+
+Number of Fisher Scoring iterations: 7
+
+                             Pseudo.R.squared
+McFadden                          0.008418660
+Cox and Snell (ML)                0.000962091
+Nagelkerke (Cragg and Uhler)      0.008904820
+[1] "Logistic regressions between PRS and their related disease and their nagelkerke pseudo R-squared:"
+[1] "IBD by PRS IBD:"
+
+Call:
+glm(formula = ibd ~ PRS_ibd, family = binomial(link = logit), 
+    data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.4808  -0.1856  -0.1640  -0.1442   3.5629  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -4.30160    0.01287 -334.17   <2e-16 ***
+PRS_ibd      0.38555    0.01232   31.29   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 73165  on 487296  degrees of freedom
+Residual deviance: 72175  on 487295  degrees of freedom
+AIC: 72179
+
+Number of Fisher Scoring iterations: 7
+
+                             Pseudo.R.squared
+McFadden                           0.01352680
+Cox and Snell (ML)                 0.00202891
+Nagelkerke (Cragg and Uhler)       0.01455290
+ 
+ 
+ 
+ 
+ 
+[1] "CD by PRS CD:"
+
+Call:
+glm(formula = cd ~ PRS_cd, family = binomial(link = logit), data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3850  -0.1158  -0.1002  -0.0866   3.7967  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -5.28868    0.02108 -250.91   <2e-16 ***
+PRS_cd       0.44597    0.01904   23.43   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 33441  on 487296  degrees of freedom
+Residual deviance: 32900  on 487295  degrees of freedom
+AIC: 32904
+
+Number of Fisher Scoring iterations: 8
+
+                             Pseudo.R.squared
+McFadden                           0.01617500
+Cox and Snell (ML)                 0.00110941
+Nagelkerke (Cragg and Uhler)       0.01672710
+ 
+ 
+ 
+ 
+ 
+[1] "UC by PRS UC:"
+
+Call:
+glm(formula = uc ~ PRS_uc, family = binomial(link = logit), data = data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3015  -0.1556  -0.1407  -0.1263   3.4600  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -4.61692    0.01488  -310.3   <2e-16 ***
+PRS_uc       0.31308    0.01456    21.5   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 55715  on 487296  degrees of freedom
+Residual deviance: 55246  on 487295  degrees of freedom
+AIC: 55250
+
+Number of Fisher Scoring iterations: 7
+
+                             Pseudo.R.squared
+McFadden                          0.008418660
+Cox and Snell (ML)                0.000962091
+Nagelkerke (Cragg and Uhler)      0.008904820

@@ -1,5 +1,5 @@
 #PBS -l walltime=4:00:00
-#PBS -l select=1:ncpus=12:mem=120gb
+#PBS -l select=1:ncpus=10:mem=120gb
 
 # Please set the directory of the R Scripts here, which will be carried throughout the entire code:
 path=/rds/general/project/hda_students_data/live/Group4/General/full_scripts

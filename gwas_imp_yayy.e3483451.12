@@ -1,0 +1,10 @@
+
+intel-suite/2016 : code compiled with this may produce the runtime error
+                   '*** buffer overrun detected ***'
+                   switch to intel-suite/2019.4 or later and recompile
+
+/var/spool/PBS/mom_priv/jobs/3483451[12].pbs.SC: line 12: /rds/general/project/hda_students_data/live/Group4/General/xin/gwas_learn/output: Is a directory
+/var/spool/PBS/mom_priv/jobs/3483451[12].pbs.SC: line 13: /rds/general/project/hda_students_data/live/Group4/General/full_scripts/data: Is a directory
+/var/spool/PBS/mom_priv/jobs/3483451[12].pbs.SC: line 14: /rds/general/project/hda_students_data/live/Group4/General/full_scripts/data/v4: Is a directory
+/var/spool/PBS/mom_priv/jobs/3483451[12].pbs.SC: line 15: /rds/general/project/hda_students_data/live/Group4/General/full_scripts/data: Is a directory
+Error: Failed to open /logistic_imp_v4_chr12.log.  Try changing the --out parameter.

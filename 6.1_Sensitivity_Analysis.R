@@ -168,7 +168,6 @@ for (i in (1:length(X_snps))){  # XZ updated 05/05/2021
   
   print(paste0("Progress: ",i,"/",length(X_snps)))  
 }
-
 toc()
 
 #----------------- 6d Run mini GWAS -----------------#
