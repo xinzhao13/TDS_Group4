@@ -92,8 +92,6 @@ The folder structure of the project directory should look like this.
 └── original    # the original demonstrative scripts
 ```
 
-&nbsp;
-
 ### Prerequisites 💻
 
 Below are the list of packages and the version numbers required to reproduce the project.
