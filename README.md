@@ -3,11 +3,11 @@
 
 This project is prepared for the Translational Data Science module as part of MSc Health Data Analytics and Machine Learning. Group 4 has been tasked to utilise UK Biobank (UKB) and implement one of the most cutting-edge techniques Mendelian Randomisation (MR) in epidemiology to assess the causal relationship between Inflammatory Bowel Disease (IBD), its subtypes Crohn's Disease (CD) and Ulcerative Colitis (UC), and Colon Cancer. 
 
-We adopted the Polygenic Risk Score (PRS) as instrumental variables to infer the causal relationship between IBD and colon cancer.
+We adopted the Polygenic Risk Score (PRS) as instrumental variables to infer the causal relationship between IBD and Colon Cancer.
 
 We used the European cohort of Inflammatory Bowel Disease Genetics Consortium (IIBDGC) to select the IBD-associated SNPs and to generate the weights of those SNPS, the causal inference between IBD and colon cancer was performed in the UKB cohort. Hospital Episode Statistics (HES) was provided as part of the UKB data.
 
-In addition to the observational analysis and the main MR analysis, we have studied potential confounding variables using LASSO, sPLS and Random Forest models, used the selected/import covariates to attenuate the observational associations between IBD and colon cancer. We have queried the selected SNPS and checked for potential confounders using PhenoScanner, performed logistic regressions between the individual IBD-associated SNPs colon cancer, followed by a set of sensitivity analyses to assess the assumptions of the MR analysis.
+In addition to the observational analysis and the main MR analysis, we have studied potential confounding variables using LASSO, sPLS and Random Forest models, used the selected/important covariates to attenuate the observational associations between IBD and colon cancer. We have queried the selected SNPS and checked for potential confounders using PhenoScanner, performed logistic regressions between the individual IBD-associated SNPs and colon cancer, followed by a set of sensitivity analyses to assess the assumptions of the MR analysis.
 
 For the detailed description of the data sources, data processing and analysis please see the full report.
 
