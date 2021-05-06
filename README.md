@@ -86,7 +86,40 @@ The following bash scripts calls the R scripts above:
 Below are the list of packages and the version numbers required to reproduce the project.
 
   ```sh
-  npm install npm@latest -g
+  Packages	Version
+  bit64	4.0.5
+  car	3.0-2
+  data.table	1.12.2
+  dplyr	1.0.5
+  genio	1.0.12
+  ggplot2	3.3.3
+  gridExtra	2.3
+  gsubfn	0.7
+  gt	0.2.2
+  gtsummary	1.4.0
+  Hmisc	4.2-0
+  ieugwasr	0.1.5
+  imputeMissings	0.0.3
+  matchmaker	0.1.1
+  MendelianRandomization	0.5.1
+  oem	2.0.9
+  openxlsx	4.1.0
+  parallel	3.6.1
+  patchwork	1.1.1
+  pheatmap	1.0.12
+  plotROC	2.2.1
+  randomForest	4.6-14
+  RColorBrewer	1.1-2
+  rcompanion	2.4.0
+  regclass	1.6
+  ROSE	0.0-3
+  sgPLS	1.7
+  snpStats	1.36.0
+  tictoc	1
+  tidyverse	1.3.0
+  utils	3.6.1
+  VennDiagram	1.6.20
+
   ```
 
 ### Installation 🖱️
