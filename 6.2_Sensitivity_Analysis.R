@@ -67,7 +67,7 @@ setwd(y_path)
 
 # Read in data
 X<-readRDS(paste0(X_path,"corrected_betas_ibd.rds"))  # beta=logOR and corrected, no se
-y<-read.csv(paste0(y_path,"0-4-cc_gwas_v4.csv")) # beta=OR
+y<-read.csv(paste0(y_path,"0-4-cc_gwas_v4.csv")) # beta=logOR
 Z<-read.csv(paste0(Z_path,"iv_maf_ibd.txt")) # beta=logOR, has se
 
 # Read in se from Z for X that's not in corrected_betas_ibd.rds, but required by mr_obj() function

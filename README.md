@@ -25,7 +25,7 @@ The following files identifies UKB participants by eid:
 | File name           | Description                           |
 |---------------------|---------------------------------------|
 | ukb26390.csv        | Main UKB data                         |
-| ukb27725.csv        | HES data                              |
+| ukb27725.csv        | HES data (not used)                   |
 | GWAS_PCs.rds        | First 10 PCs of the UKB genotype data |
 | hesin_diag.txt      | HES medical diagnosis                 |
 | w19266_20200204.csv | List of withdrawn participants        |
@@ -43,16 +43,16 @@ The following files come from IIBDGC:
 ## Key scripts 📜
 
 The following R scripts should be run sequentially by the respective .sh scripts:
-| R script                            | Corresponding .sh Script |
-|-------------------------------------|--------------------------|
-| 1_SNP_List_Creation.R               |                          |
-| 2_Genetic_Data_Creation.R           |                          |
-| 3_Outcome_Covariate_Data_Creation.R |                          |
-| 4_Final_Data_Creation.R             |                          |
-| 5_Analysis_and_Visualisation.R      |                          |
-| 5plus_Analysis_and_Visualisation.R  |                          |
-| 6.1_Sensitivity_Analysis.R          |                          |
-| 6.2_Sensitivity_Analysis.R          |                          |
+| R script                            | Description                                                                                                                                                                                                                                     |
+|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1_SNP_List_Creation.R               | Selects the IBD-associated SNPs (and also for UC, CD separately) from IIBDGC, this includes clumping and the removal of rare variants.                                                                                                          |
+| 2_Genetic_Data_Creation.R           | Matches effect alleles and major/minor alleles between UKB and IIBDGC, generates genetic data on selected SNPs from UKB genotype data, and calculates the PRS scores.                                                                           |
+| 3_Outcome_Covariate_Data_Creation.R | Extracts disease status including colon cancer, other digestive cancer types, non-cancer diseases and covariates from the UKB data.                                                                                                             |
+| 4_Final_Data_Creation.R             | Joins all disease status and covariates with PRS scores.                                                                                                                                                                                        |
+| 5_Analysis_and_Visualisation.R      | Produces table 1, performs the main MR analysis, performs mean/mode imputation of any remaining missing values, performs sPLS and Random Forest for counfounder analysis, visualises the PRS scores and the results of the confounder analysis. |
+| 5plus_Analysis_and_Visualisation.R  | Performs LASSO and attenuation analysis, visualises the results.                                                                                                                                                                                |
+| 6.1_Sensitivity_Analysis.R          | Prepares for multivariable logistic regressions at SNP level, queries PhennoScanner.                                                                                                                                                            |
+| 6.2_Sensitivity_Analysis.R          | Performs the multivariable logistic regressions at SNP level, consolidates the results, visualises the 2-sample MR and sensitivity analysis.                                                                                                    |
 
 
 &nbsp;
