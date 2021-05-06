@@ -1,13 +1,10 @@
 data/
+Ss/
 *.rds
 *.xlsx
 *.csv
-*.sh.e*
-*.sh.o*
-*cores.e*
-*cores.o*
-*core.e*
-*core.o*
+*.e*
+*.o*
 *.Rhistory
 *.fam
 *.bim
