@@ -5,7 +5,7 @@ This project is prepared for the Translational Data Science module as part of MS
 
 We adopted the Polygenic Risk Scores (PRS) as instrumental variables to infer the causal relationship between IBD (and UC and CD respectively) and Colon Cancer.
 
-We used the European cohort of Inflammatory Bowel Disease Genetics Consortium (IIBDGC) to select the IBD-associated SNPs and to generate the weights of those SNPS, the causal inference between IBD and colon cancer was performed in the UKB cohort. Hospital Episode Statistics (HES) was linked to the UKB data by the unique eid identifier of participants.
+We used the European cohort of Inflammatory Bowel Disease Genetics Consortium (IIBDGC) to select the IBD-associated SNPs and to generate the weights of those SNPS, the causal inference between IBD and colon cancer was performed in the UKB cohort. We used the UKB genotype data, cancer diagnosis, lifestyle factors, medication, dietary habits, biomarkers. Hospital Episode Statistics (HES) was linked to the UKB data by the unique eid identifier of participants, from which we used the non-cancer disease outcomes.
 
 In addition to the observational analysis and the main MR analysis, we have studied potential confounding variables using LASSO, sPLS and Random Forest models, used the selected/important covariates to attenuate the observational associations between IBD and colon cancer. We have queried the selected SNPS and checked for potential confounders using PhenoScanner, performed logistic regressions between the individual IBD-associated SNPs and colon cancer, followed by a set of sensitivity analyses (WM, IVW and MR-Egger etc) to assess the assumptions of the MR analysis.
 
@@ -31,7 +31,7 @@ The following files identifies UKB participants by eid:
 | File name           | Description                           |
 |---------------------|---------------------------------------|
 | ukb26390.csv        | Main UKB data                         |
-| ukb27725.csv        | HES data (not used)                   |
+| ukb27725.csv        | UKB biomarker data                    |
 | GWAS_PCs.rds        | First 10 PCs of the UKB genotype data |
 | hesin_diag.txt      | HES medical diagnosis                 |
 | w19266_20200204.csv | List of withdrawn participants        |
@@ -69,7 +69,7 @@ The following bash scripts calls the R scripts above:
 
 | Bash script                     | Description |
 |---------------------------------|-------------|
-| Job_Submission_Step2Only.sh     |             |
+| 
 | Job_Submission_Step3Only.sh     |             |
 | Job_Submission_Step4Only.sh     |             |
 | Job_Submission_Step5Only.sh     |             |
@@ -117,16 +117,67 @@ Below are the list of packages and the version numbers required to reproduce the
 ├── analysis
 ├── data
 ├── Job_Submission_DataCreation.sh
-├── Job_Submission_Step1Only.sh
-├── Job_Submission_Step2Only.sh
-├── Job_Submission_Step3Only.sh
-├── Job_Submission_Step4Only.sh
+├── Job_Submission_DataCreation.sh.e3221321
+├── Job_Submission_DataCreation.sh.o3221321
+├── Job_Submission_SensitivityAnalysis1.sh
+├── Job_Submission_SensitivityAnalysis2.sh
+├── Job_Submission_SensitivityAnalysis3.sh
 ├── Job_Submission_Step5Only.sh
 ├── Job_Submission_Step5plusOnly.sh
-├── Job_Submission_Step6Only.sh
-├── Job_Submission_Step6plusOnly.sh
+├── Job_Submission_Step5plusOnly.sh.e3483701
+├── Job_Submission_Step5plusOnly.sh.o3483701
 ├── original
-└── README.md
+├── RandomForestTest.R
+├── RandomForestTest.sh
+├── RandomForestTest.sh.e3484204
+├── RandomForestTest.sh.e3484228
+├── RandomForestTest.sh.o3484204
+├── RandomForestTest.sh.o3484228
+├── README.md
+└── Ss
+
+4 directories, 25 files
+bash-4.2$ tree -L 2
+.
+├── 1_SNP_List_Creation.R
+├── 2_Genetic_Data_Creation.R
+├── 3_Outcome_Covariate_Data_Creation.R
+├── 4_Final_Data_Creation.R
+├── 5_Analysis_and_Visualisation.R
+├── 5plus_Analysis_and_Visualisation.R
+├── 6.1_Sensitivity_Analysis.R
+├── 6.2_Sensitivity_Analysis.R
+├── analysis
+│   ├── 1-2-phenoscanner_output.csv
+│   ├── appendix;\ forest.jpg
+│   ├── appendix;\ scatter.jpg
+│   ├── MR_logistic_regressions_results.txt
+│   ├── MR_plot.jpg
+│   ├── PRSvalidation_logistic_regressions_results.txt
+│   ├── PRS_validation_plot.jpg
+│   ├── results;\ forest+scatter.jpg
+│   └── Vennspls.pdf
+├── data
+├── original
+│   ├── example_extraction
+│   ├── generating_toy_dataset.R
+│   ├── getting_started.R
+│   ├── README.txt
+│   ├── recoding_disease.R
+│   └── Ss
+├── RandomForestTest.R
+├── RandomForestTest.sh
+├── RandomForestTest.sh.e3484204
+├── RandomForestTest.sh.e3484228
+├── RandomForestTest.sh.o3484204
+├── RandomForestTest.sh.o3484228
+├── README.md
+└── Ss
+    ├── Job_Submission_Step1Only.sh
+    ├── Job_Submission_Step2Only.sh
+    ├── Job_Submission_Step3Only.sh
+    ├── Job_Submission_Step4Only.sh
+    └── Job_Submission_Step6plusOnly-copy.sh
 ```
 
 &nbsp;
