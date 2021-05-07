@@ -295,7 +295,7 @@ dependencies:
   - r-utf8=1.1.4=r36h96ca727_0
   - r-vctrs=0.3.7=r36hcfec24a_0
   - r-venndiagram=1.6.20=r36h6115d3f_1002
-  - r-viridis=0.5.1=r36h6115d3f_0 
+  - r-viridis=0.5.1=r36h6115d3f_0
   - r-viridislite=0.3.0=r36h6115d3f_0
   - r-webshot=0.5.1=r36h6115d3f_0
   - r-whisker=0.3_2=r36h6115d3f_4
