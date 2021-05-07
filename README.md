@@ -93,8 +93,7 @@ The folder structure of the project directory should look like this.
 ```bash
 .
 ├── analysis    # outputs and plots
-├── data        # data folder that should be created explicitly by users
-└── original    # the original demonstrative scripts
+└── data    # data folder that should be created explicitly by users
 ```
 
 ### Prerequisites 💻
