@@ -9,6 +9,8 @@ We used the European cohort of Inflammatory Bowel Disease Genetics Consortium (I
 
 In addition to the observational analysis and the main MR analysis, we have studied potential confounding variables using LASSO, sPLS and Random Forest models, used the selected/important covariates to attenuate the observational associations between IBD and colon cancer. We have queried the selected SNPS and checked for potential confounders using PhenoScanner, performed logistic regressions between the individual IBD-associated SNPs and colon cancer, followed by a set of sensitivity analyses (WM, IVW and MR-Egger etc) to assess the assumptions of the MR analysis.
 
+The project was performed on Imperial's HPC and used R version 3.6.0. 
+
 For the detailed description of the data sources, data processing and analysis, please see the full report.
 
 &nbsp;
