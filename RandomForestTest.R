@@ -46,7 +46,7 @@ tic("Step 5")
 # This step works and takes between XX & XX mins to run
 print("Starting 5f")
 tic("Step 5f")
-
+set.seed(235)
 #setwd("/rds/general/project/hda_students_data/live/Group4/General/full_scripts/data")
 df <-readRDS("imputed_everything.rds")
 
@@ -103,31 +103,32 @@ colon <- importance
 #ibd[order(ibd[,3], decreasing =TRUE),] [1:10,]
 
 # Plots to figure out where to threshold
-library(ggplot2)
-ibd_data <- cbind(as.data.frame(ibd),rownames(ibd)) %>% transmute(ibdpredictors = rownames(ibd), MeanDecreaseAccuracy) %>% arrange(desc(MeanDecreaseAccuracy))
-ggplot(ibd_data, aes(x=reorder(ibdpredictors, MeanDecreaseAccuracy),y=MeanDecreaseAccuracy)) + geom_point()
+#library(ggplot2)
+#ibd_data <- cbind(as.data.frame(ibd),rownames(ibd)) %>% transmute(ibdpredictors = rownames(ibd), MeanDecreaseAccuracy) %>% arrange(desc(MeanDecreaseAccuracy))
+#ggplot(ibd_data, aes(x=reorder(ibdpredictors, MeanDecreaseAccuracy),y=MeanDecreaseAccuracy)) + geom_point()
 
-colon_data <- cbind(as.data.frame(colon),rownames(colon)) %>% transmute(colonpredictors = rownames(colon), MeanDecreaseAccuracy) %>% arrange(desc(MeanDecreaseAccuracy))
-ggplot(colon_data, aes(x=reorder(colonpredictors, MeanDecreaseAccuracy),y=MeanDecreaseAccuracy)) + geom_point()
+#colon_data <- cbind(as.data.frame(colon),rownames(colon)) %>% transmute(colonpredictors = rownames(colon), MeanDecreaseAccuracy) %>% arrange(desc(MeanDecreaseAccuracy))
+#ggplot(colon_data, aes(x=reorder(colonpredictors, MeanDecreaseAccuracy),y=MeanDecreaseAccuracy)) + geom_point()
 
 # Based on the plots, there seems to be a clear drop-off, so I will set the threshold there!
-threshold = 0.0003
-
+threshold = 0.00025
 colon_predictors <- colon %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold) %>% arrange(desc(MeanDecreaseAccuracy))
 #print(colon_predictors)
 #dim(colon_predictors)
 colon_predictors <- rownames(colon_predictors)
 colon_length <- length(colon_predictors)
-print("Colon Permutation Predictors")
-print(colon_predictors)
+#print("Colon Permutation Predictors")
+#print(colon_predictors)
+#saveRDS(colon_predictors,"ukb_ML_rf_colon_predictors.rds")
 
 ibd_predictors <- ibd  %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold)%>% arrange(desc(MeanDecreaseAccuracy))
 #print(ibd_predictors)
 #dim(ibd_predictors)
 ibd_predictors <- rownames(ibd_predictors)
 ibd_length <- length(ibd_predictors)
-print("IBD Permutation Predictors")
-print(ibd_predictors)
+#print("IBD Permutation Predictors")
+#print(ibd_predictors)
+#saveRDS(ibd_predictors,"ukb_ML_rf_IBD_predictors.rds")
 
 #ibd_predictors_l <- c(ibd_predictors, c(0,0))
 #predictors <- cbind(ibd_predictors_l,colon_predictors)
@@ -140,7 +141,7 @@ joint_predictors <- inner_join(as.data.frame(ibd_predictors), as.data.frame(colo
 #print("joint predictors are: (and saving as ukb_ML_randomforest_jointpredictors_perm.rds)")
 #print(joint_predictors)
 saveRDS(joint_predictors,"ukb_ML_randomforest_jointpredictors_perm.rds")
-joint_length <- dim(joint_predictors)[1]
+#joint_length <- dim(joint_predictors)[1]
 ## 11 Joint predictors
 
 toc()

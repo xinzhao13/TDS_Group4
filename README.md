@@ -47,6 +47,9 @@ The following files come from IIBDGC:
 
 &nbsp;
 
+We also provided `magic.yml` that can be used to install some of the packages required below 👇.
+
+&nbsp;
 
 ## Key scripts 📜
 

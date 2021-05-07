@@ -603,9 +603,9 @@ toc()
 # This step works and takes between XX & XX mins to run
 print("Starting 5f")
 tic("Step 5f")
-
+set.seed(235)
 #setwd("/rds/general/project/hda_students_data/live/Group4/General/full_scripts/data")
-df <-imp_data#readRDS("imputed_everything.rds")
+df <-readRDS("imputed_everything.rds")
 
 #------------------------ Get x and y dataframes
 
@@ -617,7 +617,7 @@ ycolon <- df %>% dplyr::select(c(colon))
 
 tic("IBD Random Forest Training 100 trees")
 print("IBD Random Forest 100 trees")
-# 1 tree takes 83 seconds, so 100 trees will take 2hrs 20 mins
+# This takes 100-140 minutes!
 rf.ibd <- randomForest(x=x, y=yibd$ibd, ntree=100, importance=TRUE)
 toc()
 
@@ -635,7 +635,7 @@ ibd <- importance
 
 tic("Colon Random Forest Training 100 trees")
 print("Colon Random Forest 100 trees")
-# 1 tree takes 83 seconds, so 100 trees will take 2hrs 20 mins
+# This takes 100-140 minutes!
 rf.colon <- randomForest(x=x, y=ycolon$colon, ntree=100, importance=TRUE)
 toc()
 
@@ -656,11 +656,8 @@ colon <- importance
 #ibd <- readRDS("ukb_ML_rf_IBD_importance.rds")
 
 # We need to pick a threshold: either the top X predictors, or a minimum MeanDecreaseAccuracy, or Gini
-
 #colon[order(colon[,3], decreasing =TRUE),] [1:10,]
 #ibd[order(ibd[,3], decreasing =TRUE),] [1:10,]
-
-# I picked an arbitrary value of 230 as the Gini threshold, as this should work fine no matter the balance between case and control:
 
 # Plots to figure out where to threshold
 #library(ggplot2)
@@ -671,32 +668,38 @@ colon <- importance
 #ggplot(colon_data, aes(x=reorder(colonpredictors, MeanDecreaseAccuracy),y=MeanDecreaseAccuracy)) + geom_point()
 
 # Based on the plots, there seems to be a clear drop-off, so I will set the threshold there!
-threshold = 0.0003
+threshold = 0.00025
 
-colon_gini_predictors <- colon %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold) %>% arrange(desc(MeanDecreaseAccuracy))
-#print(colon_gini_predictors)
-#dim(colon_gini_predictors)
-colon_gini_predictors <- rownames(colon_gini_predictors)
-colon_length <- length(colon_gini_predictors)
+colon_predictors <- colon %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold) %>% arrange(desc(MeanDecreaseAccuracy))
+#print(colon_predictors)
+#dim(colon_predictors)
+colon_predictors <- rownames(colon_predictors)
+colon_length <- length(colon_predictors)
+#print("Colon Permutation Predictors")
+#print(colon_predictors)
+#saveRDS(colon_predictors,"ukb_ML_rf_colon_predictors.rds")
 
-ibd_gini_predictors <- ibd  %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold)%>% arrange(desc(MeanDecreaseAccuracy))
-#print(ibd_gini_predictors)
-#dim(ibd_gini_predictors)
-ibd_gini_predictors <- rownames(ibd_gini_predictors)
-ibd_length <- length(ibd_gini_predictors)
+ibd_predictors <- ibd  %>% as.data.frame() %>% filter(MeanDecreaseAccuracy>threshold)%>% arrange(desc(MeanDecreaseAccuracy))
+#print(ibd_predictors)
+#dim(ibd_predictors)
+ibd_predictors <- rownames(ibd_predictors)
+ibd_length <- length(ibd_predictors)
+#print("IBD Permutation Predictors")
+#print(ibd_predictors)
+#saveRDS(ibd_predictors,"ukb_ML_rf_IBD_predictors.rds")
 
-#ibd_gini_predictors_l <- c(ibd_gini_predictors, c(0,0))
-#predictors <- cbind(ibd_gini_predictors_l,colon_gini_predictors)
+#ibd_predictors_l <- c(ibd_predictors, c(0,0))
+#predictors <- cbind(ibd_predictors_l,colon_predictors)
 #predictors
 
 # Then we can do an inner join on the variable names, and make a Venn diagram
 
 print("Now we are doing the inner join")
-joint_predictors <- inner_join(as.data.frame(ibd_gini_predictors), as.data.frame(colon_gini_predictors), by=c("ibd_gini_predictors"="colon_gini_predictors")) 
+joint_predictors <- inner_join(as.data.frame(ibd_predictors), as.data.frame(colon_predictors), by=c("ibd_predictors"="colon_predictors")) 
 #print("joint predictors are: (and saving as ukb_ML_randomforest_jointpredictors_perm.rds)")
 #print(joint_predictors)
 saveRDS(joint_predictors,"ukb_ML_randomforest_jointpredictors_perm.rds")
-joint_length <- dim(joint_predictors)[1]
+#joint_length <- dim(joint_predictors)[1]
 ## 11 Joint predictors
 
 toc()
