@@ -1,0 +1,208 @@
+[1] "Unadjusted model:"
+
+Call:
+glm(formula = colon ~ ibd, family = binomial(link = logit), data = imp_data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.1680  -0.1149  -0.1149  -0.1149   3.1700  
+
+Coefficients:
+            Estimate Std. Error  z value Pr(>|z|)    
+(Intercept) -5.01776    0.01758 -285.469  < 2e-16 ***
+ibd1         0.76461    0.10174    7.515 5.67e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 40329  on 502505  degrees of freedom
+Residual deviance: 40284  on 502504  degrees of freedom
+AIC: 40288
+
+Number of Fisher Scoring iterations: 7
+
+ 
+ 
+ 
+ 
+ 
+[1] "Adjusted model, sPLS selected variables:"
+
+Call:
+glm(formula = colon ~ ., family = binomial(link = logit), data = data_pls)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.5566  -0.1286  -0.0980  -0.0685   3.7611  
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                          -8.3836924  0.5602727 -14.964  < 2e-16 ***
+age                                   0.0859582  0.0030348  28.325  < 2e-16 ***
+smoking_status1                      -0.1750646  0.2367082  -0.740 0.459555    
+smoking_status2                      -0.2957781  0.2055139  -1.439 0.150090    
+household_income2                     0.1283259  0.0505675   2.538 0.011158 *  
+household_income3                     0.0822975  0.0470358   1.750 0.080174 .  
+household_income4                     0.0974356  0.0675531   1.442 0.149202    
+household_income5                     0.0491954  0.1163879   0.423 0.672525    
+days_vigorous_activity_per_week      -0.0285192  0.0096948  -2.942 0.003264 ** 
+usual_walking_pace2                  -0.0187929  0.0582204  -0.323 0.746855    
+usual_walking_pace3                  -0.0231254  0.0652803  -0.354 0.723153    
+nap_during_day2                       0.0399653  0.0373345   1.070 0.284411    
+nap_during_day3                       0.0854189  0.0687498   1.242 0.214067    
+sleeplessness2                        0.0084600  0.0457523   0.185 0.853300    
+sleeplessness3                       -0.0436014  0.0501675  -0.869 0.384784    
+ever_smoked1                          0.2080163  0.1978269   1.052 0.293026    
+past_tobacco_smoking2                -0.1076611  0.0578708  -1.860 0.062833 .  
+past_tobacco_smoking3                -0.3678231  0.2414941  -1.523 0.127730    
+past_tobacco_smoking4                -0.1278999  0.1395916  -0.916 0.359539    
+never_eat_egg_dairy_wheat_sugar2     -0.2757202  0.1711439  -1.611 0.107170    
+never_eat_egg_dairy_wheat_sugar3     -0.2513099  0.1601041  -1.570 0.116493    
+never_eat_egg_dairy_wheat_sugar4     -0.0902274  0.1024439  -0.881 0.378453    
+never_eat_egg_dairy_wheat_sugar5     -0.0482434  0.0969326  -0.498 0.618696    
+bread_type2                          -0.0890758  0.0601927  -1.480 0.138915    
+bread_type3                          -0.1275109  0.0426456  -2.990 0.002790 ** 
+bread_type4                          -0.0642243  0.0930340  -0.690 0.489986    
+cereal_type2                          0.0531393  0.0661265   0.804 0.421628    
+cereal_type3                          0.0527833  0.0561434   0.940 0.347139    
+cereal_type4                          0.0160995  0.0666612   0.242 0.809158    
+cereal_type5                          0.0274649  0.0664027   0.414 0.679159    
+coffee_type2                          0.0574491  0.0502428   1.143 0.252861    
+coffee_type3                          0.0076131  0.0643007   0.118 0.905752    
+coffee_type4                          0.0907609  0.1500129   0.605 0.545166    
+major_diet_changes1                   0.6921109  0.0480769  14.396  < 2e-16 ***
+major_diet_changes2                  -0.0413156  0.0441008  -0.937 0.348838    
+alcohol_intake_freq2                 -0.0369455  0.0524077  -0.705 0.480834    
+alcohol_intake_freq3                 -0.0904007  0.0528347  -1.711 0.087079 .  
+alcohol_intake_freq4                 -0.1379882  0.0688222  -2.005 0.044963 *  
+alcohol_intake_freq5                 -0.1249760  0.0655938  -1.905 0.056741 .  
+alcohol_intake_freq6                 -0.2157120  0.0751296  -2.871 0.004089 ** 
+loperamid1                            1.2247034  0.2231729   5.488 4.07e-08 ***
+codeine_phosphate1                    0.9492068  0.4603847   2.062 0.039230 *  
+albumin                              -0.0248029  0.0084470  -2.936 0.003321 ** 
+alkaline_phosphatase                  0.0022524  0.0004851   4.643 3.43e-06 ***
+C.reactive_protein                    0.0112121  0.0032315   3.470 0.000521 ***
+calcium                              -0.4618182  0.2311732  -1.998 0.045748 *  
+cholesterol                           0.2392673  0.0717040   3.337 0.000847 ***
+creatinine                            0.0015090  0.0008849   1.705 0.088133 .  
+cystatin_C                            0.0284298  0.1170469   0.243 0.808089    
+gamma_glutamyltransferase             0.0005640  0.0003406   1.656 0.097757 .  
+hdl_cholesterol                      -0.1735148  0.0735674  -2.359 0.018345 *  
+ldl_direct                           -0.2845973  0.0905462  -3.143 0.001672 ** 
+ibd1                                  0.3308025  0.1047878   3.157 0.001595 ** 
+unspecific_benign_neoplasm_of_colon1  1.8085764  0.0754212  23.980  < 2e-16 ***
+FH_MNDO1                              1.3231070  0.0602413  21.963  < 2e-16 ***
+Depressive_episode1                   0.1891704  0.7168121   0.264 0.791853    
+depression1                          -0.1787772  0.7137965  -0.250 0.802232    
+diabtes_merge1                       -0.0219532  0.0558776  -0.393 0.694407    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 40329  on 502505  degrees of freedom
+Residual deviance: 37449  on 502448  degrees of freedom
+AIC: 37565
+
+Number of Fisher Scoring iterations: 8
+
+ 
+ 
+ 
+ 
+ 
+[1] "Adjusted model, Lasso selected variables:"
+
+Call:
+glm(formula = colon ~ ., family = binomial(link = logit), data = data_lasso)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.9557  -0.1083  -0.1019  -0.0969   3.3670  
+
+Coefficients:
+                                       Estimate Std. Error  z value Pr(>|z|)
+(Intercept)                          -6.0328334  0.0576061 -104.726  < 2e-16
+major_diet_changes1                   0.7043346  0.0443542   15.880  < 2e-16
+major_diet_changes2                  -0.1158482  0.0435245   -2.662 0.007775
+loperamid1                            1.4014599  0.2216894    6.322 2.59e-10
+alkaline_phosphatase                  0.0034105  0.0003914    8.713  < 2e-16
+cystatin_C                            0.5644975  0.0490029   11.520  < 2e-16
+ibd1                                  0.3631904  0.1045452    3.474 0.000513
+unspecific_benign_neoplasm_of_colon1  2.0407201  0.0749978   27.210  < 2e-16
+FH_MNDO1                              1.2893432  0.0600324   21.477  < 2e-16
+                                        
+(Intercept)                          ***
+major_diet_changes1                  ***
+major_diet_changes2                  ** 
+loperamid1                           ***
+alkaline_phosphatase                 ***
+cystatin_C                           ***
+ibd1                                 ***
+unspecific_benign_neoplasm_of_colon1 ***
+FH_MNDO1                             ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 40329  on 502505  degrees of freedom
+Residual deviance: 38773  on 502497  degrees of freedom
+AIC: 38791
+
+Number of Fisher Scoring iterations: 8
+
+ 
+ 
+ 
+ 
+ 
+[1] "Adjusted model, Random Forest selected variables:"
+
+Call:
+glm(formula = colon ~ ., family = binomial(link = logit), data = data_rf)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6217  -0.1341  -0.1016  -0.0707   3.7860  
+
+Coefficients:
+                              Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                 -8.837e+00  4.517e-01 -19.562  < 2e-16 ***
+age                          8.829e-02  2.885e-03  30.597  < 2e-16 ***
+gender1                      4.354e-01  7.011e-02   6.210 5.30e-10 ***
+bmi                          6.029e-03  4.306e-03   1.400 0.161459    
+major_diet_changes1          7.308e-01  4.652e-02  15.710  < 2e-16 ***
+major_diet_changes2         -3.308e-02  4.384e-02  -0.755 0.450510    
+X5asa1                      -1.116e+01  9.473e+01  -0.118 0.906223    
+alanine_aminotransferase    -5.092e-03  2.079e-03  -2.449 0.014313 *  
+albumin                     -4.398e-02  7.569e-03  -5.811 6.20e-09 ***
+apolipoprotein_A            -1.450e-01  1.451e-01  -0.999 0.317555    
+apolipoprotein_B            -1.470e-02  8.110e-02  -0.181 0.856213    
+aspartate_aminotransferase  -7.250e-04  2.418e-03  -0.300 0.764316    
+C.reactive_protein           1.337e-02  3.123e-03   4.281 1.86e-05 ***
+creatinine                  -8.731e-04  1.179e-03  -0.740 0.459107    
+cystatin_C                   2.194e-01  1.265e-01   1.734 0.082910 .  
+direct_bilirubin             7.791e-03  3.111e-02   0.250 0.802246    
+gamma_glutamyltransferase    1.428e-03  3.482e-04   4.101 4.11e-05 ***
+glycated_haemoglobin.HbA1c. -8.459e-03  3.074e-03  -2.752 0.005928 ** 
+hdl_cholesterol              3.895e-01  1.088e-01   3.580 0.000344 ***
+shbg                        -2.600e-03  9.132e-04  -2.847 0.004407 ** 
+testosterone                -1.356e-02  5.842e-03  -2.321 0.020288 *  
+total_bilirubin              7.866e-03  7.018e-03   1.121 0.262367    
+triglycerides                1.149e-01  1.937e-02   5.932 2.99e-09 ***
+urate                       -3.617e-04  2.791e-04  -1.296 0.194951    
+ibd1                         5.342e-01  1.029e-01   5.191 2.09e-07 ***
+diabtes_merge1               4.525e-02  6.379e-02   0.709 0.478168    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 40329  on 502505  degrees of freedom
+Residual deviance: 38286  on 502480  degrees of freedom
+AIC: 38338
+
+Number of Fisher Scoring iterations: 14
+
