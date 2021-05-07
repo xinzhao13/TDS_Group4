@@ -1,8 +1,6 @@
 #----------------- 2: Genetic Data Creation -----------------#
 
-# This script takes approx 6 mins to complete
-
-# This script performs the actions of Genetic Data Creation, defined by this flowchart: https://whimsical.com/tds-r-scripts-and-data-flow-VmAm6BzY1jUML2a32569t2
+# This script performs the actions of Genetic Data Creation
 # It is designed to run on the HPC server
 
 # It requires
@@ -29,7 +27,7 @@ tic("Step 2")
 # It outputs a Polygenic Risk Score (PRS) of IBD, CD, and UC for all participants
 
 #----------------- 2a Import SNPs -----------------#
-# Here I need to integrate Marie's sh scripts into my central sh script
+# Here I need to integrate the sh scripts into my central sh script
 
 # import_snps.sh
 # merge_genetic_data_all.sh
@@ -37,7 +35,7 @@ tic("Step 2")
 # This will output a lovely file called UKB_imp_merged.bim within full_scripts/data/import_snps_results_all
 
 #----------------- 2b UKB Genetic Data Creation -----------------#
-# Original code is 3-read_from_plink.R by Xin
+# Original code is 3-read_from_plink.R
 # This takes about 90 seconds
 print("Starting Step 2b")
 tic("Step 2b")
@@ -112,7 +110,7 @@ saveRDS(x, paste0(res,"genetic_data_converted_all.rds"))
 toc()
 
 #----------------- 2c IBD Beta correction -----------------#
-# Original code is comparing_alleles.R by Marie
+# Original code is comparing_alleles.R
 # This takes about 2 seconds
 print("Starting Step 2c")
 tic("Step 2c")
@@ -169,7 +167,7 @@ saveRDS(full_cd, file='corrected_betas_cd.rds')
 
 toc()
 #----------------- 2d Calculate PRS -----------------#
-# Original code is calculate_prs_parallelised_all.R by Marie
+# Original code is calculate_prs_parallelised_all.R
 # This takes about 4 mins to complete
 
 print("Starting step 2d")

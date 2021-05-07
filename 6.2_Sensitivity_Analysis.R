@@ -1,8 +1,6 @@
 #----------------- 6.2: Sensitivity Analysis & Assumptions Check -----------------#
 
-# This script is complete and takes about XXXX mins to run
-
-# This script performs the actions of Sensivity Analysis & Assumptions Check, defined by this flowchart: https://whimsical.com/tds-r-scripts-and-data-flow-VmAm6BzY1jUML2a32569t2
+# This script performs the actions of Sensitivity Analysis & Assumptions Check
 # It is designed to run on the HPC server
 
 print("initiating Step 6.2 now (Sensitivity Analysis)")
@@ -11,10 +9,10 @@ print("initiating Step 6.2 now (Sensitivity Analysis)")
 # > all previous steps
 # > UKB genotype data
 # > Several packages
-library(tidyverse)#installed
-library(tictoc)#installed
-library(data.table)#installed
-library(MendelianRandomization)#installed
+library(tidyverse)
+library(tictoc)
+library(data.table)
+library(MendelianRandomization)
 library(patchwork)
 # Documentation: https://cran.r-project.org/web/packages/MendelianRandomization/MendelianRandomization.pdf
 # Github repo: https://github.com/cran/MendelianRandomization
@@ -33,13 +31,12 @@ print("We've set the working directory")
 # It outputs analysis and visualisation in the folder "analysis"
 
 #----------------- 6d Run mini GWAS -----------------#
-# Original code is 0-3-logistic_geno.sh by Xin
+# Original code is 0-3-logistic_geno.sh
 ##### This has just been completed
 print("Step 6d complete")
 
 #----------------- 6e Consolidate mini GWAS output from 22 chromosomes -----------------#
-# Original code is 0-4-consolidate_gwas.R by Xin
-# This step works and takes between XX & XX mins to run
+# Original code is 0-4-consolidate_gwas.R
 print("Starting 6e")
 tic("Step 6e")
 
@@ -52,8 +49,7 @@ write.csv(cc_gwas_summary,"0-4-cc_gwas_v4.csv",row.names=FALSE)
 toc()
 
 #----------------- 6f Produce all methods sensitivity analysis -----------------#
-# Original code is 1-1-mr_sensitivity.R by Xin
-# This step works and takes between XX & XX mins to run
+# Original code is 1-1-mr_sensitivity.R
 print("Starting 6f")
 tic("Step 6f")
 
@@ -269,8 +265,7 @@ dev.off()
 toc()
 
 #----------------- 6g Generate PhenoScanner output -----------------#
-# Original code is 1-2-phenoscanner.R by Xin
-# This step works and takes between XX & XX mins to run
+# Original code is 1-2-phenoscanner.R
 print("Starting 6g")
 tic("Step 6g")
 

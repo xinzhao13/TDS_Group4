@@ -1,8 +1,6 @@
 #----------------- 5PLUS: Analysis & Visualisation -----------------#
 
-# This script is complete and takes about XXXX mins to run
-
-# This script performs the actions of Analysis & Visualisation, defined by this flowchart: https://whimsical.com/tds-r-scripts-and-data-flow-VmAm6BzY1jUML2a32569t2
+# This script performs the actions of Analysis & Visualisation
 # It is designed to run on the HPC server
 
 print("Now launching RScript 5PLUS!")
@@ -10,14 +8,14 @@ print("Now launching RScript 5PLUS!")
 # It requires
 # > results from 5_Analysis_&_Visualisation.R
 # > Several packages
-library(tidyverse)#installed
-library(tictoc)#installed
-library(regclass) #installed
-library(car) #installed
-library(imputeMissings) #for imputation #installed
-library(oem) # installed
-library(parallel)#installed
-library(matchmaker) #installed
+library(tidyverse)
+library(tictoc)
+library(regclass)
+library(car)
+library(imputeMissings) #for imputation
+library(oem) 
+library(parallel)
+library(matchmaker)
 
 
 args=commandArgs(trailingOnly=TRUE)
@@ -36,7 +34,8 @@ tic("Step 5plus")
 
 
 #----------------- 5g LASSO -----------------#
-# Original code is lasso_oem.R by Marie 
+# Original code is lasso_oem.R
+# This step takes more than 10 hours to run
 print("Starting step 5g")
 tic("Step 5g")
 
@@ -161,7 +160,8 @@ saveRDS(intersect, file=paste0(datapath,'Lasso_intersect.rds'))
 toc()
 
 #----------------- 5h Attenuation Analysis -----------------#
-# Original code is logreg_colon.R by Marie
+# Original code is logreg_colon.R
+# This step takes less than 10 mins to run
 print("Starting step 5h")
 tic("Step 5h")
 
@@ -220,7 +220,7 @@ fit_adjusted_rf<-glm(colon~., family = binomial(link=logit), data=data_rf)
 
 print("Reading in sPLS selected variables")
 ###sPLS selected variables
-#read in Nas' file? somehow not possible
+
 vars_pls<-c('colon','ibd',"age","smoking_status","household_income","days_vigorous_activity_per_week","usual_walking_pace","nap_during_day", 
             "sleeplessness","ever_smoked","past_tobacco_smoking","bread_type","cereal_type","coffee_type","major_diet_changes" ,"loperamid",
             "codeine_phosphate","albumin","alkaline_phosphatase","C.reactive_protein","calcium","cholesterol","creatinine","cystatin_C",

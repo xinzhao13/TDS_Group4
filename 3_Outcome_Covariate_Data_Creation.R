@@ -1,6 +1,6 @@
 #----------------- 3: Outcome and Covariate Data Creation -----------------#
 
-# This script performs the actions of Outcome and Covariate Data Creation, defined by this flowchart: https://whimsical.com/tds-r-scripts-and-data-flow-VmAm6BzY1jUML2a32569t2
+# This script performs the actions of Outcome and Covariate Data Creation
 # It is designed to run on the HPC server
 
 # It requires
@@ -8,7 +8,7 @@
 # > Participant withdrawal data
 # > UKB Participant Data (ukb2390.csv)
 # > UKB Biomarker Data (ukb27725.csv)
-# > ukb_drugs_list.txt by Marie
+# > ukb_drugs_list.txt
 # > Several packages
 library(data.table)
 library(openxlsx)
@@ -34,7 +34,7 @@ tic("Step 3")
 # It outputs seven files with outcome and covariate data for participants
 
 #----------------- 3a Get Biomarker Data -----------------#
-# Original script is biomarker_extraction_final.R by Nas
+# Original script is biomarker_extraction_final.R
 print("Step 3a starting now")
 tic("Step 3a")
 
@@ -118,7 +118,7 @@ saveRDS(biomarker_clean, "ukb_biomaker_final.rds")
 toc()
 
 #----------------- 3b Get HES Covariate data -----------------#
-# Original script is hes_covar_extraction.R by Xuyi
+# Original script is hes_covar_extraction.R
 print("Beginning Step 3b")
 tic("Step 3b")
 
@@ -178,7 +178,7 @@ toc()
 
 
 #----------------- 3c Get HES non-cancer outcomes -----------------#
-# Original script is hes_otheroutcome_extraction.R by Xuyi
+# Original script is hes_otheroutcome_extraction.R
 print("Beginning Step 3c")
 tic("Step 3c")
 
@@ -244,7 +244,7 @@ toc()
 
 
 #----------------- 3d Get HES data for Validation -----------------#
-# Original script is hes_ibd_extraction.R by Xuyi
+# Original script is hes_ibd_extraction.R
 print("Now we're onto Step 3d")
 tic("Step 3d")
 
@@ -305,7 +305,7 @@ saveRDS(mydata_ibd, "hes_ibd_extraction.rds")
 toc()
 
 #----------------- 3e Get UKB Cancer Outcomes for All Chosen Cancers -----------------#
-# Original script is ukb_cancer_extraction.R by Xin
+# Original script is ukb_cancer_extraction.R
 print("Beginning Step 3e")
 tic("Step 3e")
 
@@ -407,7 +407,7 @@ saveRDS(ukb_cancer_status_all, paste0(path_out,"ukb_cancer_status.rds"))
 toc()
 
 #----------------- 3f Get Covariates for ML Confounder Analysis -----------------#
-# Original script is ukb_ML_covars.R by Andy
+# Original script is ukb_ML_covars.R
 print("Starting Step 3f")
 tic("Step 3f")
 
@@ -643,7 +643,7 @@ saveRDS(extracted, "ukb_ML_covars.rds")
 toc()
 
 #----------------- 3g Get drug covariates -----------------#
-# Original script is ukb_drugs_extraction.R by Xin
+# Original script is ukb_drugs_extraction.R
 print("Starting Step 3g")
 tic("Step 3g")
 
@@ -694,7 +694,7 @@ print(paste0(length(ukb_eid)-length(ukb_consent_eid),
 #ukb_drugs_consent<-readRDS(paste0(path_out,"ukb_drugs_consent.rds"))
 ukb_consent_eid<-ukb_drugs_consent$eid
 
-# Load list of drugs prepared by Marie
+# Load list of drugs prepared
 ukb_drugs_list<-read.csv(paste0(path_list,"ukb_drugs_list.txt"),
                          stringsAsFactors=FALSE)  # <-- to prevent R read data as factors
 

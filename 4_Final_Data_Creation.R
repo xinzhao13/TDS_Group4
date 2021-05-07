@@ -1,8 +1,6 @@
 #----------------- 4: Final Data Creation -----------------#
 
-# This script is unfinished 
-
-# This script performs the actions of Final Data Creation, defined by this flowchart: https://whimsical.com/tds-r-scripts-and-data-flow-VmAm6BzY1jUML2a32569t2
+# This script performs the actions of Final Data Creation
 # It is designed to run on the HPC server
 
 # It requires
@@ -30,7 +28,7 @@ tic("Step 4")
 # It outputs a single tidy dataset containing all the data we need for our analyses and validation
 
 #----------------- 4a Mega-join of all the important columns -----------------#
-# Original script is ukb_hes_join_everything.R by Xin
+# Original script is ukb_hes_join_everything.R
 
 # Loading the data
 print("Loading in the data now...")
@@ -40,7 +38,7 @@ ukb_cancer_status<-readRDS("ukb_cancer_status.rds")
 prs_all<-readRDS("PRS_all.rds")
 
 # From UKB data
-# Andrea's ukb_ML_covars.rds contains whats in Nas' earlier version
+# Andrea's ukb_ML_covars.rds contains whats in the earlier version
 #nas_covar<-readRDS("ukb_covar.rds")
 ukb_covar<-readRDS("ukb_ML_covars.rds")
 ukb_drugs<-readRDS("ukb_drugs.rds")

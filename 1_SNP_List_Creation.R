@@ -1,8 +1,6 @@
 #----------------- 1: SNP List Creation -----------------#
 
-# This script is complete and takes about 90 mins to run
-
-# This script performs the actions of SNP List Creation, defined by this flowchart: https://whimsical.com/tds-r-scripts-and-data-flow-VmAm6BzY1jUML2a32569t2
+# This script performs the actions of SNP List Creation
 # It is designed to run on the HPC server
 
 # It requires
@@ -68,7 +66,7 @@ colnames(snps_ukb)<-'rs_ID'
 #saveRDS(snps_ukb, file='/rds/general/project/hda_students_data/live/Group4/General/full_scripts/data/snps_imp_ukb.rds')
 toc()
 #----------------- 1b Filter UKB matched SNPs before clumping -----------------#
-# Original code is ibdgwas_explore.R by Xin
+# Original code is ibdgwas_explore.R
 # This takes about 5 mins to run
 print("Starting 1b")
 tic("Step 1b")

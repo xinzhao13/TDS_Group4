@@ -11,7 +11,7 @@ In addition to the observational analysis and the main MR analysis, we have stud
 
 The project was performed on Imperial's HPC and used R version 3.6.0. 
 
-For the detailed description of the data sources, data processing and analysis, please see the full report.
+For the detailed description of the data sources, data processing and analysis, please see the full report. The figures and outputs from the analyses can be found from the "analyis" folder under the project directory.
 
 &nbsp;
 

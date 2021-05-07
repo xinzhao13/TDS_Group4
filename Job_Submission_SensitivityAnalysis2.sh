@@ -1,12 +1,13 @@
 #!/bin/bash
-#PBS -l walltime=30:00:00
+#PBS -l walltime=6:00:00
 #PBS -l select=1:ncpus=16:mem=10gb
-#PBS -N gwas_imp_yayy
 #PBS -J 1-22
 
-# Please set the directory of the R Scripts here, which will be carried throughout the entire code:
+# Please set the directory of the R Scripts here, which will be carried throughout each R script:
 path=/rds/general/project/hda_students_data/live/Group4/General/full_scripts
 cd $path
+
+# This step takes less than one hour to run.
 
 module load plink
 

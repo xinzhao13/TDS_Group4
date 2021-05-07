@@ -2,31 +2,31 @@
 
 # This script is complete and takes about 28+RF mins to run
 
-# This script performs the actions of Analysis & Visualisation, defined by this flowchart: https://whimsical.com/tds-r-scripts-and-data-flow-VmAm6BzY1jUML2a32569t2
+# This script performs the actions of Analysis & Visualisation
 # It is designed to run on the HPC server
 
 # It requires
 # > ukb_hes_everything.rds
 # > Several packages
-library(tidyverse)#installed
-library(tictoc)#installed
-library(gtsummary)#installed
-library(gt)#installed
-library(data.table)#installed
-library(patchwork)#installed
-library(ggplot2)#installed
-library(plotROC)#installed
-library(rcompanion) #for nagelkerke #installed
-library(imputeMissings)#installed
-library(sgPLS)#installed
-library(VennDiagram)#installed
-library(pheatmap)#installed
-library(utils)#installed
-library(ROSE) #installed
-library(gsubfn) #installed
-library(randomForest)#installed
-library(gridExtra) #installed
-library(Hmisc)#installed
+library(tidyverse)
+library(tictoc)
+library(gtsummary)
+library(gt)
+library(data.table)
+library(patchwork)
+library(ggplot2)
+library(plotROC)
+library(rcompanion) #for nagelkerke 
+library(imputeMissings)
+library(sgPLS)
+library(VennDiagram)
+library(pheatmap)
+library(utils)
+library(ROSE) 
+library(gsubfn) 
+library(randomForest)
+library(gridExtra) 
+library(Hmisc)
 library(RColorBrewer)
 
 args=commandArgs(trailingOnly=TRUE)
@@ -96,7 +96,7 @@ gtsave(as_gt(table1), path = analysis, "table1.png")
 toc()
 
 #----------------- 5b Logistic Regression -----------------#
-# Original code is logistic_regression.R by Marie 
+# Original code is logistic_regression.R 
 # This step works and takes less than 1 min to run
 print("Starting 5b")
 tic("Step 5b")
@@ -246,7 +246,7 @@ sink() # stop writing to file
 toc()
 
 #----------------- 5c QC of PRS -----------------#
-# Original code is visualisation_onlyPRS.R by Marie
+# Original code is visualisation_onlyPRS.R
 # This step works and takes less than 1 min to run
 print("Starting 5c")
 tic("Step 5c")
@@ -432,7 +432,7 @@ sink() # stop writing to file
 toc()
 
 #----------------- 5d Standardisation and Dummy Variable Creation -----------------#
-# Original code is createMatrixLasso.R by Marie
+# Original code is createMatrixLasso.R
 # This step works and takes 60s to run
 print("Starting 5d")
 tic("Step 5d")
@@ -481,7 +481,7 @@ saveRDS(newdata, file='matrixLasso.rds')
 toc()
 
 #----------------- 5e sPLS -----------------#
-# Original code is sPLS.R by Nasirdin 
+# Original code is sPLS.R 
 # This step works and takes 24 mins to run
 print("Starting 5e")
 tic("Step 5e")
@@ -600,7 +600,7 @@ toc()
 
 #----------------- 5f Random Forest -----------------#
 # Original code is ukb_ML_randomforest.R by Andrea 
-# This step works and takes between XX & XX mins to run
+# This step works and takes between 3-4 hrs to run
 print("Starting 5f")
 tic("Step 5f")
 set.seed(235)
@@ -705,9 +705,9 @@ saveRDS(joint_predictors,"ukb_ML_randomforest_jointpredictors_perm.rds")
 toc()
 
 #----------------- 5g LASSO -----------------#
-# Original code is lasso_oem.R by Marie 
+# Original code is lasso_oem.R 
 #----------------- 5h Attenuation Analysis -----------------#
-# Original code is logreg_colon.R by Marie 
+# Original code is logreg_colon.R 
 
 ### These two steps are in a separate script due to very high computational demands of step 5g
 

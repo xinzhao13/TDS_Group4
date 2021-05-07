@@ -1,8 +1,7 @@
 #PBS -l walltime=3:00:00
 #PBS -l select=1:ncpus=24:mem=80gb
-#PBS -N 1nodesevcores
 
-# Please set the directory of the R Scripts here, which will be carried throughout the entire code:
+# Please set the directory of the R Scripts here, which will be carried throughout each R script:
 path=/rds/general/project/hda_students_data/live/Group4/General/full_scripts
 cd $path
 
@@ -64,7 +63,7 @@ Rscript 3_Outcome_Covariate_Data_Creation.R $path
 
 date
 
-# STEP 4 : 
+# STEP 4 : Final Data Creation - approx 10 mins runtime
 
 Rscript 4_Final_Data_Creation.R $path
 

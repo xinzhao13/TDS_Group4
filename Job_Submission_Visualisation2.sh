@@ -1,7 +1,9 @@
-#PBS -l walltime=8:00:00
+#PBS -l walltime=15:00:00
 #PBS -l select=1:ncpus=10:mem=120gb
 
-# Please set the directory of the R Scripts here, which will be carried throughout the entire code:
+# This step takes approx 11 hours to run from start to finish
+
+# Please set the directory of the R Scripts here, which will be carried throughout each R script:
 path=/rds/general/project/hda_students_data/live/Group4/General/full_scripts
 cd $path
 

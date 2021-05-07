@@ -1,17 +1,15 @@
 #----------------- 6.1: Sensitivity Analysis & Assumptions Check -----------------#
 
-# This script is complete and takes about XXXX mins to run
-
-# This script performs the actions of Sensivity Analysis & Assumptions Check, defined by this flowchart: https://whimsical.com/tds-r-scripts-and-data-flow-VmAm6BzY1jUML2a32569t2
+# This script performs the actions of Sensivity Analysis & Assumptions Check
 # It is designed to run on the HPC server
 
 # It requires
 # > all previous steps
 # > UKB genotype data
 # > Several packages
-library(tidyverse)#installed
-library(tictoc)#installed
-library(data.table)#installed
+library(tidyverse)
+library(tictoc)
+library(data.table)
 library(MendelianRandomization)
 # Documentation: https://cran.r-project.org/web/packages/MendelianRandomization/MendelianRandomization.pdf
 # Github repo: https://github.com/cran/MendelianRandomization
@@ -33,8 +31,8 @@ tic("Step 6.1")
 # It outputs analysis and visualisation in the folder "analysis"
 
 #----------------- 6a Prepare fam file and List IBD -----------------#
-# Original code is 0-2-make_fam_snps.R by Xin
-# This step works and takes between XX & XX mins to run
+# Original code is 0-2-make_fam_snps.R
+
 print("Starting 6a")
 tic("Step 6a")
 
@@ -83,7 +81,7 @@ write.table(snps,paste0(dest,"0-2-ibd_snps_list.txt"), row.names=FALSE,col.names
 toc()
 
 #----------------- 6b Prepare confounders for mini GWAS IBD -----------------#
-# Original code is 0-1-prep_covars.R by Xin
+# Original code is 0-1-prep_covars.R
 # This step works and takes between XX & XX mins to run
 print("Starting 6b")
 tic("Step 6b")
@@ -137,8 +135,7 @@ write.table(mymodel, "0-1-confounders.txt", row.names=FALSE, col.names=TRUE, quo
 toc()
 
 #----------------- 6c Extract Phenoscanner output for IBD SNPs -----------------#
-# Original code is 1-2-phenoscanner.R by Xin
-# This step works and takes between XX & XX mins to run
+# Original code is 1-2-phenoscanner.R
 print("Starting 6c")
 tic("Step 6c")
 
@@ -161,7 +158,7 @@ print("Starting phenoscanner section")
 # Export phenoscanner output to file
 for (i in (1:length(X_snps))){  # XZ updated 05/05/2021
   
-  snp<-X_snps[i] # XZ updated 05/05/2021
+  snp<-X_snps[i] # updated 05/05/2021
   snp_data<-phenoscanner(snp)
   write.table(snp_data,"1-2-phenoscanner_output.csv",
               append=TRUE,sep="/")
@@ -172,7 +169,7 @@ toc()
 dir.create(file.path(getwd(), "v4"), showWarnings = FALSE)
 
 #----------------- 6d Run mini GWAS -----------------#
-# Original code is 0-3-logistic_geno.sh by Xin
+# Original code is 0-3-logistic_geno.sh
 ##### This is done in an sh script!
 
 print("Step 6.1 complete! Now for the mini GWAS.")
